@@ -5,7 +5,7 @@ int sampleIndex = 0; // Index to keep track of the current sample
 int count = 0;
 
 void setup() {
-  Serial.begin(9600); // Initialize serial communication
+  Serial.begin(115200); // Initialize serial communication
 }
 
 void loop() {
@@ -17,7 +17,7 @@ void loop() {
   sampleIndex++;
 
   // Check if we have collected enough samples
-  if (sampleIndex == numSamples && count < 30) {
+  if (sampleIndex == numSamples) {
     // Export the data through the serial port
     for (int i = 0; i < numSamples; i++) {
       Serial.print(analogData[i]);
