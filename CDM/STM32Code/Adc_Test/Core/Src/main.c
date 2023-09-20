@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include <string.h>
+#include "stm32f0xx_hal.h"
 
 /* USER CODE END Includes */
 
@@ -35,6 +36,18 @@ char msg[20];
 char msg2[15];
 
 volatile uint32_t millis = 0; // Milliseconds counter
+
+#define MAX_READINGS 670 // Maximum number of readings to store
+
+// Structure to store time and ADC value
+typedef struct
+{
+    float time_seconds;
+    uint16_t adc_value;
+} Reading;
+
+Reading adc_readings[MAX_READINGS]; // Array to store time and ADC readings
+uint32_t readings_count = 0; // Number of stored readings
 
 /* USER CODE END PTD */
 
@@ -51,6 +64,8 @@ volatile uint32_t millis = 0; // Milliseconds counter
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc;
 
+TIM_HandleTypeDef htim16;
+
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
@@ -62,6 +77,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_ADC_Init(void);
 static void MX_USART1_UART_Init(void);
+static void MX_TIM16_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -101,33 +117,57 @@ int main(void)
   MX_GPIO_Init();
   MX_ADC_Init();
   MX_USART1_UART_Init();
+  MX_TIM16_Init();
   /* USER CODE BEGIN 2 */
 
   HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq() / 1000); // Configure the SysTick timer for 1ms interrupts
+
+  HAL_TIM_Base_Start_IT(&htim16); // Start TIM16 with interrupts
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
-
-	  // Start an ADC conversion
-	  HAL_ADC_Start(&hadc);
-	  HAL_ADC_PollForConversion(&hadc, HAL_MAX_DELAY);
 
 	  // Read ADC value
-	  uint16_t adc_value = HAL_ADC_GetValue(&hadc);
+	  	  	  HAL_ADC_Start(&hadc);
+	          HAL_ADC_PollForConversion(&hadc, HAL_MAX_DELAY);
+	          uint16_t adc_value = HAL_ADC_GetValue(&hadc);
 
-	  // Calculate time in seconds
-	  float time_seconds = (float)millis / 1000.0;
+	          // Calculate time in seconds
+	          float time_seconds = (float)(HAL_GetTick()) / 1000.0;
 
-	  // Transmit data over UART
-	  char uart_data[50];
-	  snprintf(uart_data, sizeof(uart_data), "%.8f\t%.8f\r\n", time_seconds, (float)adc_value * 3.3 / 4096.0);
-	  HAL_UART_Transmit(&huart1, (uint8_t *)uart_data, strlen(uart_data), HAL_MAX_DELAY);
+	          // Create a Reading structure and store it in the array
+	          if (readings_count < MAX_READINGS)
+	          {
+	              adc_readings[readings_count].time_seconds = time_seconds;
+	              adc_readings[readings_count].adc_value = adc_value;
+	              readings_count++;
+	          }
 
-	  HAL_Delay(1000); // Delay for 1 second before the next conversion
+	          // Check if we have collected enough readings to transmit
+	          if (readings_count >= MAX_READINGS)
+	          {
+	              // Format and transmit the entire array
+	              char uart_data[500]; // Adjust the buffer size as needed
+	              int offset = 0;
+
+	              //offset += snprintf(uart_data + offset, sizeof(uart_data) - offset, "Time\tValue\r\n");
+
+	              for (uint32_t i = 0; i < readings_count; i++)
+	              {
+	                  offset += snprintf(uart_data + offset, sizeof(uart_data) - offset, "%.8f\t%.8f\r\n", adc_readings[i].time_seconds, (float)adc_readings[i].adc_value * 3.3 / 4096.0);
+	              }
+
+	              HAL_UART_Transmit(&huart1, (uint8_t *)uart_data, strlen(uart_data), HAL_MAX_DELAY);
+
+	              // Reset the readings_count to collect new readings
+	              readings_count = 0;
+	          }
+    /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }
@@ -236,6 +276,38 @@ static void MX_ADC_Init(void)
 }
 
 /**
+  * @brief TIM16 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM16_Init(void)
+{
+
+  /* USER CODE BEGIN TIM16_Init 0 */
+
+  /* USER CODE END TIM16_Init 0 */
+
+  /* USER CODE BEGIN TIM16_Init 1 */
+
+  /* USER CODE END TIM16_Init 1 */
+  htim16.Instance = TIM16;
+  htim16.Init.Prescaler = 0;
+  htim16.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim16.Init.Period = 65535;
+  htim16.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim16.Init.RepetitionCounter = 0;
+  htim16.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim16) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM16_Init 2 */
+
+  /* USER CODE END TIM16_Init 2 */
+
+}
+
+/**
   * @brief USART1 Initialization Function
   * @param None
   * @retval None
@@ -251,7 +323,7 @@ static void MX_USART1_UART_Init(void)
 
   /* USER CODE END USART1_Init 1 */
   huart1.Instance = USART1;
-  huart1.Init.BaudRate = 115200;
+  huart1.Init.BaudRate = 250000;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
   huart1.Init.StopBits = UART_STOPBITS_1;
   huart1.Init.Parity = UART_PARITY_NONE;
@@ -290,9 +362,12 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_SYSTICK_Callback(void)
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-  millis++;
+  if (htim == &htim16)
+  {
+    millis++; // Increment the milliseconds counter
+  }
 }
 /* USER CODE END 4 */
 
