@@ -6,7 +6,7 @@ import wave
 
 # Parameters for audio recording
 FORMAT = pyaudio.paInt16  # Audio format (16-bit PCM)
-CHANNELS = 1             # Number of audio channels (mono)
+CHANNELS = 2             # Number of audio channels (mono)
 RATE = 48000            # Sample rate (samples per second)
 RECORD_SECONDS = 20      # Duration of the recording in seconds
 OUTPUT_FILENAME = "output.wav"
