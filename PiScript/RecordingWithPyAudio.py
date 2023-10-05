@@ -35,6 +35,7 @@ print(f"Recording for {RECORD_SECONDS} seconds...")
 
 frames = []
 
+
 # Record audio data
 for _ in range(0, int(RATE / 1024 * RECORD_SECONDS)):
     data = stream.read(1024)
