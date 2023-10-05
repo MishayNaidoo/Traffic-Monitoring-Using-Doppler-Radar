@@ -6,7 +6,7 @@ import wave
 
 # Parameters for audio recording
 FORMAT = pyaudio.paInt16  # Audio format (16-bit PCM)
-CHANNELS = 2             # Number of audio channels (mono)
+CHANNELS = 2           # Number of audio channels (mono)
 RATE = 48000            # Sample rate (samples per second)
 RECORD_SECONDS = 20      # Duration of the recording in seconds
 OUTPUT_FILENAME = "output.wav"
@@ -27,7 +27,7 @@ desired_device_index = 1 # Replace with the index of your chosen microphone
 audio = pyaudio.PyAudio()
 
 # Open an audio input stream with the selected device
-stream = audio.open(format=pyaudio.paInt16, channels=1, rate=48000,
+stream = audio.open(format=pyaudio.paInt16, channels=2, rate=48000,
                     input=True, input_device_index=desired_device_index,
                     frames_per_buffer=1024)
 
