@@ -21,7 +21,7 @@ for i in range(audio.get_device_count()):
     print(f"Device {i}: {device_name}")
 
 # Choose the desired input device by index
-desired_device_index = 1 # Replace with the index of your chosen microphone
+desired_device_index = 0 # Replace with the index of your chosen microphone
 
 # Initialize PyAudio
 audio = pyaudio.PyAudio()
