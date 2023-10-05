@@ -29,7 +29,7 @@ audio = pyaudio.PyAudio()
 # Open an audio input stream with the selected device
 stream = audio.open(format=pyaudio.paInt16, channels=2, rate=48000,
                     input=True, input_device_index=desired_device_index,
-                    frames_per_buffer=2048)
+                    frames_per_buffer=4096)
 
 print(f"Recording for {RECORD_SECONDS} seconds...")
 
