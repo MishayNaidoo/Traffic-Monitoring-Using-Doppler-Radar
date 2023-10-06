@@ -5,7 +5,7 @@ import time
 # Parameters for audio recording
 FORMAT = pyaudio.paInt16  # Audio format (16-bit PCM)
 CHANNELS = 1             # Number of audio channels (mono)
-RATE = 44100             # Sample rate (samples per second)
+RATE = 48000            # Sample rate (samples per second)
 RECORD_DURATION = 10     # Duration of each recording in seconds
 
 # Initialize PyAudio
