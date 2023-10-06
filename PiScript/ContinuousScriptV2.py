@@ -7,6 +7,7 @@ FORMAT = pyaudio.paInt16  # Audio format (16-bit PCM)
 CHANNELS = 1             # Number of audio channels (mono)
 RATE = 48000            # Sample rate (samples per second)
 RECORD_DURATION = 10     # Duration of each recording in seconds
+BUFFER_SIZE = 4096
 
 # Initialize PyAudio
 audio = pyaudio.PyAudio()
@@ -28,12 +29,12 @@ while True:
 
     # Open the audio stream before entering the recording loop
     stream = audio.open(format=FORMAT, channels=CHANNELS,
-                        rate=RATE, input=True, input_device_index=desired_device_index, frames_per_buffer=1024)
+                        rate=RATE, input=True, input_device_index=desired_device_index, frames_per_buffer=BUFFER_SIZE)
 
     # Record audio data for the specified duration
     start_time = time.time()
     while time.time() - start_time < RECORD_DURATION:
-        data = stream.read(1024)
+        data = stream.read(BUFFER_SIZE)
         frames.append(data)
 
     # Close the audio stream after finishing recording
