@@ -11,6 +11,15 @@ RECORD_DURATION = 10     # Duration of each recording in seconds
 # Initialize PyAudio
 audio = pyaudio.PyAudio()
 
+# List available input devices and their indices
+for i in range(audio.get_device_count()):
+    device_info = audio.get_device_info_by_index(i)
+    device_name = device_info['name']
+    print(f"Device {i}: {device_name}")
+
+# Choose the desired input device by index
+desired_device_index = 3 # Replace with the index of your chosen microphone
+
 while True:
     frames = []
 
@@ -19,7 +28,7 @@ while True:
 
     # Open the audio stream before entering the recording loop
     stream = audio.open(format=FORMAT, channels=CHANNELS,
-                        rate=RATE, input=True, frames_per_buffer=1024)
+                        rate=RATE, input=True, input_device_index=desired_device_index, frames_per_buffer=1024)
 
     # Record audio data for the specified duration
     start_time = time.time()
