@@ -1,8 +1,8 @@
 import pyaudio
 import wave
 import time
-
-# This script records continuously for the record duration and then saves it as a wav file. It then starts recording again and repeats forever.
+import RPi.GPIO as GPIO
+import subprocess
 
 # Parameters for audio recording
 FORMAT = pyaudio.paInt16  # Audio format (16-bit PCM)
@@ -10,6 +10,14 @@ CHANNELS = 1             # Number of audio channels (mono)
 RATE = 48000            # Sample rate (samples per second)
 RECORD_DURATION = 10     # Duration of each recording in seconds
 BUFFER_SIZE = 4096
+
+# Define GPIO pin for the shutdown button
+SHUTDOWN_BUTTON_PIN = 18
+
+# This function will be called when the button is pressed
+def shutdown_button_callback(channel):
+    print("Button pressed. Shutting down...")
+    subprocess.call(['sudo', 'poweroff'])
 
 # Initialize PyAudio
 audio = pyaudio.PyAudio()
@@ -21,7 +29,12 @@ for i in range(audio.get_device_count()):
     print(f"Device {i}: {device_name}")
 
 # Choose the desired input device by index
-desired_device_index = 3 # Replace with the index of your chosen microphone
+desired_device_index = 3  # Replace with the index of your chosen microphone
+
+# Set up the GPIO for the button
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(SHUTDOWN_BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.add_event_detect(SHUTDOWN_BUTTON_PIN, GPIO.FALLING, callback=shutdown_button_callback, bouncetime=2000)
 
 while True:
     frames = []

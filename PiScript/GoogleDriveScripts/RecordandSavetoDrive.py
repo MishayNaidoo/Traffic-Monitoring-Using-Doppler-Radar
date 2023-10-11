@@ -1,15 +1,24 @@
+# This python script records the radar readings to a wav file for a selected duration and then uploads this wav file to google drive
+
 import pyaudio
 import wave
 import time
-
-# This script records continuously for the record duration and then saves it as a wav file. It then starts recording again and repeats forever.
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
 
 # Parameters for audio recording
 FORMAT = pyaudio.paInt16  # Audio format (16-bit PCM)
 CHANNELS = 1             # Number of audio channels (mono)
-RATE = 48000            # Sample rate (samples per second)
+RATE = 48000             # Sample rate (samples per second)
 RECORD_DURATION = 10     # Duration of each recording in seconds
 BUFFER_SIZE = 4096
+
+# Your Google Drive credentials JSON file
+CREDENTIALS_FILE = 'trafficmonitoring-401516-dc644ef2c53d.json'
+
+# Create a service object for the Google Drive API
+credentials = service_account.Credentials.from_service_account_file(CREDENTIALS_FILE, scopes=['https://www.googleapis.com/auth/drive'])
+drive_service = build('drive', 'v3', credentials=credentials)
 
 # Initialize PyAudio
 audio = pyaudio.PyAudio()
@@ -21,7 +30,7 @@ for i in range(audio.get_device_count()):
     print(f"Device {i}: {device_name}")
 
 # Choose the desired input device by index
-desired_device_index = 3 # Replace with the index of your chosen microphone
+desired_device_index = 2  # Replace with the index of your chosen microphone
 
 while True:
     frames = []
@@ -54,3 +63,14 @@ while True:
         wf.setsampwidth(audio.get_sample_size(FORMAT))
         wf.setframerate(RATE)
         wf.writeframes(b''.join(frames))
+
+    # Upload the file to Google Drive
+    media_body = drive_service.files().create(
+        media_body=filename,
+        body={
+            'name': filename,
+            'parents': ['1effV0Icsmf3zc9hmt_s8qpQgEm6gttsh'],  # ID of the folder where you want to save the file
+        }
+    ).execute()
+
+    print(f"Recording complete. Saved to Google Drive as '{filename}' with ID: {media_body['id']}")
