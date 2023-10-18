@@ -8,7 +8,7 @@ import subprocess
 FORMAT = pyaudio.paInt16  # Audio format (16-bit PCM)
 CHANNELS = 1             # Number of audio channels (mono)
 RATE = 48000            # Sample rate (samples per second)
-RECORD_DURATION = 10     # Duration of each recording in seconds
+RECORD_DURATION = 120     # Duration of each recording in seconds
 BUFFER_SIZE = 4096
 
 # Define GPIO pin for the shutdown button
@@ -69,7 +69,7 @@ while True:
         wf.writeframes(b''.join(frames))
 
     # Transmit the recorded file to your laptop using SCP
-    subprocess.call(['scp', filename, 'your_username@your_laptop_ip:/path/on/laptop'])
+    subprocess.call(['scp','-i','home/raspberry/.ssh/id_rsa', filename, 'your_username@your_laptop_ip:/path/on/laptop'])
 
     # Optionally, remove the file from the Raspberry Pi to save space
     subprocess.call(['rm', filename])
