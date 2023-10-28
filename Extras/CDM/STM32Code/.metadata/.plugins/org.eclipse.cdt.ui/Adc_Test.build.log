@@ -1,0 +1,17 @@
+20:36:38 **** Incremental Build of configuration Debug for project Adc_Test ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Adc_Test.elf" @"objects.list"   -mcpu=cortex-m0 -T"/Users/mishaynaidoo/Desktop/Traffic-Monitoring-Using-Doppler-Radar/CDM/STM32Code/Adc_Test/STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Adc_Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Adc_Test.elf
+ 
+arm-none-eabi-size   Adc_Test.elf 
+arm-none-eabi-objdump -h -S  Adc_Test.elf  > "Adc_Test.list"
+   text	   data	    bss	    dec	    hex	filename
+  40220	    476	   7540	  48236	   bc6c	Adc_Test.elf
+Finished building: default.size.stdout
+ 
+Finished building: Adc_Test.list
+ 
+
+20:36:39 Build Finished. 0 errors, 0 warnings. (took 654ms)
+

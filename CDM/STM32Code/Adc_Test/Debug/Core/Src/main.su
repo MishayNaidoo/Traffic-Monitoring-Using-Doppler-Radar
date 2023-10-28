@@ -1,8 +1,0 @@
-../Core/Src/main.c:94:5:main	560	static
-../Core/Src/main.c:181:6:SystemClock_Config	104	static
-../Core/Src/main.c:229:13:MX_ADC_Init	24	static
-../Core/Src/main.c:283:13:MX_TIM16_Init	8	static
-../Core/Src/main.c:315:13:MX_USART1_UART_Init	8	static
-../Core/Src/main.c:350:13:MX_GPIO_Init	24	static
-../Core/Src/main.c:365:6:HAL_TIM_PeriodElapsedCallback	16	static
-../Core/Src/main.c:378:6:Error_Handler	8	static,ignoring_inline_asm
