@@ -1,2 +1,2 @@
-## Algorithm1 is the data processing algorithm and is designed to be run on the device receiving the radar data.
-## Algorithm2 is the data collection algorithm and is designed to be run on the device capturing the radar data, specifically a Raspberry Pi Zero W.
+Algorithm1 is the data processing algorithm and is designed to be run on the device receiving the radar data.
+Algorithm2 is the data collection algorithm and is designed to be run on the device capturing the radar data, specifically a Raspberry Pi Zero W.
