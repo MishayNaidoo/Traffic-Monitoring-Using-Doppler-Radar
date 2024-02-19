@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 1
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 1
   31:Core/Src/main.c **** 
   32:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
   33:Core/Src/main.c **** /* USER CODE BEGIN PD */
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 2
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s 			page 2
 
 
   34:Core/Src/main.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 1
   88:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
   89:Core/Src/main.c **** 
   90:Core/Src/main.c ****   /* USER CODE END 2 */
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 3
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s 			page 3
 
 
   91:Core/Src/main.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 1
  145:Core/Src/main.c **** }
  146:Core/Src/main.c **** 
  147:Core/Src/main.c **** /**
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 4
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s 			page 4
 
 
  148:Core/Src/main.c ****   * @brief GPIO Initialization Function
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 1
   67              		.loc 1 160 3 view .LVU11
   68 0022 5A69     		ldr	r2, [r3, #20]
   69 0024 8021     		movs	r1, #128
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 5
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s 			page 5
 
 
   70 0026 0903     		lsls	r1, r1, #12
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 1
  173:Core/Src/main.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
  112              		.loc 1 173 3 is_stmt 1 view .LVU25
  113              		.loc 1 173 24 is_stmt 0 view .LVU26
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 6
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s 			page 6
 
 
  114 005e 0496     		str	r6, [sp, #16]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 1
  152              		@ link register save eliminated.
  192:Core/Src/main.c ****   /* USER CODE BEGIN Error_Handler_Debug */
  193:Core/Src/main.c ****   /* User can add his own implementation to report the HAL error return state */
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 7
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s 			page 7
 
 
  194:Core/Src/main.c ****   __disable_irq();
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 1
   50:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
   51:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif                                           
   52:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __NO_RETURN
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 8
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s 			page 8
 
 
   53:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __NO_RETURN                            __attribute__((__noreturn__))
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 1
  107:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
  108:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
  109:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 9
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s 			page 9
 
 
  110:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ALIGNED
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 1
  174              	.LFE43:
  176              		.section	.text.SystemClock_Config,"ax",%progbits
  177              		.align	1
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 10
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s 			page 10
 
 
  178              		.global	SystemClock_Config
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 1
  124:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
  221              		.loc 1 124 34 is_stmt 0 view .LVU52
  222 0024 0C93     		str	r3, [sp, #48]
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 11
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s 			page 11
 
 
  125:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL12;
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 1
  259              		.loc 1 141 6 discriminator 1 view .LVU70
  260 004c 0028     		cmp	r0, #0
  261 004e 03D1     		bne	.L10
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 12
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s 			page 12
 
 
  145:Core/Src/main.c **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 1
  309              	.L12:
   94:Core/Src/main.c ****   {
  310              		.loc 1 94 3 view .LVU80
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 13
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s 			page 13
 
 
   96:Core/Src/main.c ****     {
@@ -771,21 +771,21 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 1
  351              		.file 8 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h"
  352              		.file 9 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h"
  353              		.file 10 "<built-in>"
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s 			page 14
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s 			page 14
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s:19     .text.MX_GPIO_Init:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s:133    .text.MX_GPIO_Init:00000070 $d
-C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s:139    .text.Error_Handler:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s:145    .text.Error_Handler:00000000 Error_Handler
-C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s:177    .text.SystemClock_Config:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s:183    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s:278    .text.main:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s:284    .text.main:00000000 main
-C:\Users\gamin\AppData\Local\Temp\ccLRg3xT.s:340    .text.main:00000034 $d
+C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s:19     .text.MX_GPIO_Init:00000000 $t
+C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s:133    .text.MX_GPIO_Init:00000070 $d
+C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s:139    .text.Error_Handler:00000000 $t
+C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s:145    .text.Error_Handler:00000000 Error_Handler
+C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s:177    .text.SystemClock_Config:00000000 $t
+C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s:183    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s:278    .text.main:00000000 $t
+C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s:284    .text.main:00000000 main
+C:\Users\gamin\AppData\Local\Temp\ccSmz3Um.s:340    .text.main:00000034 $d
 
 UNDEFINED SYMBOLS
 memset
