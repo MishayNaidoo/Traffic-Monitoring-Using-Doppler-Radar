@@ -1,0 +1,371 @@
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccNGicgd.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"MCP3914.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/MCP3914.c"
+  18              		.section	.text.MCP3914_ReadRegister,"ax",%progbits
+  19              		.align	1
+  20              		.global	MCP3914_ReadRegister
+  21              		.syntax unified
+  22              		.code	16
+  23              		.thumb_func
+  25              	MCP3914_ReadRegister:
+  26              	.LVL0:
+  27              	.LFB41:
+   1:Core/Src/MCP3914.c **** #include "MCP3914.h"
+   2:Core/Src/MCP3914.c **** 
+   3:Core/Src/MCP3914.c **** 
+   4:Core/Src/MCP3914.c **** /*
+   5:Core/Src/MCP3914.c ****     INITIALISE STRUCT
+   6:Core/Src/MCP3914.c **** */
+   7:Core/Src/MCP3914.c **** 
+   8:Core/Src/MCP3914.c **** void MCP3914_Initialise(MCP3914 *dev, SPI_HandleTypeDef *spiHandle, GPIO_TypeDef *Port, uint16_t Pi
+   9:Core/Src/MCP3914.c **** 
+  10:Core/Src/MCP3914.c ****     dev->spiHandle  =   spiHandle;
+  11:Core/Src/MCP3914.c ****     dev->Port       =   Port;
+  12:Core/Src/MCP3914.c ****     dev->Pin        =   Pin;
+  13:Core/Src/MCP3914.c ****     dev->adcData[0] =   0x00;
+  14:Core/Src/MCP3914.c ****     dev->adcData[1] =   0x00;
+  15:Core/Src/MCP3914.c ****     dev->adcData[2] =   0x00;
+  16:Core/Src/MCP3914.c **** 
+  17:Core/Src/MCP3914.c ****     uint8_t MCP3914_CONFIG1_CLKINTEN[3] =   {0x00, 0x00, 0x00}; //WRITE THIS TO CONFIG1 TO ENABLE I
+  18:Core/Src/MCP3914.c **** 
+  19:Core/Src/MCP3914.c ****     MCP3914_WriteRegister(dev, MCP3914_REG_CONFIG1, MCP3914_CONFIG1_CLKINTEN); //ENABLES INTERNAL C
+  20:Core/Src/MCP3914.c **** 
+  21:Core/Src/MCP3914.c **** }
+  22:Core/Src/MCP3914.c **** 
+  23:Core/Src/MCP3914.c **** 
+  24:Core/Src/MCP3914.c **** /*
+  25:Core/Src/MCP3914.c ****     LOW LEVEL FUNCTIONS
+  26:Core/Src/MCP3914.c **** */
+  27:Core/Src/MCP3914.c **** 
+  28:Core/Src/MCP3914.c **** void MCP3914_ReadRegister(MCP3914 *dev, uint8_t reg){
+  28              		.loc 1 28 53 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccNGicgd.s 			page 2
+
+
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		.loc 1 28 53 is_stmt 0 view .LVU1
+  33 0000 70B5     		push	{r4, r5, r6, lr}
+  34              		.cfi_def_cfa_offset 16
+  35              		.cfi_offset 4, -16
+  36              		.cfi_offset 5, -12
+  37              		.cfi_offset 6, -8
+  38              		.cfi_offset 14, -4
+  39 0002 84B0     		sub	sp, sp, #16
+  40              		.cfi_def_cfa_offset 32
+  41 0004 0400     		movs	r4, r0
+  29:Core/Src/MCP3914.c ****     uint8_t REG = 0x41 | (reg << 1);
+  42              		.loc 1 29 5 is_stmt 1 view .LVU2
+  43              		.loc 1 29 24 is_stmt 0 view .LVU3
+  44 0006 4900     		lsls	r1, r1, #1
+  45              	.LVL1:
+  46              		.loc 1 29 24 view .LVU4
+  47 0008 4123     		movs	r3, #65
+  48 000a 1943     		orrs	r1, r3
+  49              	.LVL2:
+  30:Core/Src/MCP3914.c ****     uint8_t sendData[4] = {REG, 0x00, 0x00, 0x00};
+  50              		.loc 1 30 5 is_stmt 1 view .LVU5
+  51              		.loc 1 30 13 is_stmt 0 view .LVU6
+  52 000c 03AD     		add	r5, sp, #12
+  53 000e 2970     		strb	r1, [r5]
+  54 0010 0023     		movs	r3, #0
+  55 0012 6B70     		strb	r3, [r5, #1]
+  56 0014 AB70     		strb	r3, [r5, #2]
+  57 0016 EB70     		strb	r3, [r5, #3]
+  31:Core/Src/MCP3914.c ****     uint8_t receiveData[4];
+  58              		.loc 1 31 5 is_stmt 1 view .LVU7
+  32:Core/Src/MCP3914.c **** 
+  33:Core/Src/MCP3914.c ****     HAL_GPIO_WritePin(dev->Port, dev->Pin, GPIO_PIN_RESET); //enable SPI by setting CS low
+  59              		.loc 1 33 5 view .LVU8
+  60 0018 0189     		ldrh	r1, [r0, #8]
+  61              	.LVL3:
+  62              		.loc 1 33 5 is_stmt 0 view .LVU9
+  63 001a 4068     		ldr	r0, [r0, #4]
+  64              	.LVL4:
+  65              		.loc 1 33 5 view .LVU10
+  66 001c 0022     		movs	r2, #0
+  67 001e FFF7FEFF 		bl	HAL_GPIO_WritePin
+  68              	.LVL5:
+  34:Core/Src/MCP3914.c ****     HAL_SPI_TransmitReceive(dev->spiHandle, sendData, receiveData, 4, HAL_MAX_DELAY);
+  69              		.loc 1 34 5 is_stmt 1 view .LVU11
+  70 0022 02AE     		add	r6, sp, #8
+  71 0024 2068     		ldr	r0, [r4]
+  72 0026 0123     		movs	r3, #1
+  73 0028 5B42     		rsbs	r3, r3, #0
+  74 002a 0093     		str	r3, [sp]
+  75 002c 0533     		adds	r3, r3, #5
+  76 002e 3200     		movs	r2, r6
+  77 0030 2900     		movs	r1, r5
+  78 0032 FFF7FEFF 		bl	HAL_SPI_TransmitReceive
+  79              	.LVL6:
+  35:Core/Src/MCP3914.c ****     HAL_GPIO_WritePin(dev->Port, dev->Pin, GPIO_PIN_SET); //disable SPI by setting CS high
+  80              		.loc 1 35 5 view .LVU12
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccNGicgd.s 			page 3
+
+
+  81 0036 2189     		ldrh	r1, [r4, #8]
+  82 0038 6068     		ldr	r0, [r4, #4]
+  83 003a 0122     		movs	r2, #1
+  84 003c FFF7FEFF 		bl	HAL_GPIO_WritePin
+  85              	.LVL7:
+  36:Core/Src/MCP3914.c **** 
+  37:Core/Src/MCP3914.c ****     dev->adcData[0] =   receiveData[1];
+  86              		.loc 1 37 5 view .LVU13
+  87              		.loc 1 37 36 is_stmt 0 view .LVU14
+  88 0040 7378     		ldrb	r3, [r6, #1]
+  89              		.loc 1 37 21 view .LVU15
+  90 0042 A372     		strb	r3, [r4, #10]
+  38:Core/Src/MCP3914.c ****     dev->adcData[1] =   receiveData[2];
+  91              		.loc 1 38 5 is_stmt 1 view .LVU16
+  92              		.loc 1 38 36 is_stmt 0 view .LVU17
+  93 0044 B378     		ldrb	r3, [r6, #2]
+  94              		.loc 1 38 21 view .LVU18
+  95 0046 E372     		strb	r3, [r4, #11]
+  39:Core/Src/MCP3914.c ****     dev->adcData[2] =   receiveData[3];
+  96              		.loc 1 39 5 is_stmt 1 view .LVU19
+  97              		.loc 1 39 36 is_stmt 0 view .LVU20
+  98 0048 F378     		ldrb	r3, [r6, #3]
+  99              		.loc 1 39 21 view .LVU21
+ 100 004a 2373     		strb	r3, [r4, #12]
+  40:Core/Src/MCP3914.c **** }
+ 101              		.loc 1 40 1 view .LVU22
+ 102 004c 04B0     		add	sp, sp, #16
+ 103              		@ sp needed
+ 104              	.LVL8:
+ 105              		.loc 1 40 1 view .LVU23
+ 106 004e 70BD     		pop	{r4, r5, r6, pc}
+ 107              		.cfi_endproc
+ 108              	.LFE41:
+ 110              		.section	.text.MCP3914_WriteRegister,"ax",%progbits
+ 111              		.align	1
+ 112              		.global	MCP3914_WriteRegister
+ 113              		.syntax unified
+ 114              		.code	16
+ 115              		.thumb_func
+ 117              	MCP3914_WriteRegister:
+ 118              	.LVL9:
+ 119              	.LFB42:
+  41:Core/Src/MCP3914.c **** 
+  42:Core/Src/MCP3914.c **** void MCP3914_WriteRegister(MCP3914 *dev, uint8_t reg, uint8_t *data){
+ 120              		.loc 1 42 69 is_stmt 1 view -0
+ 121              		.cfi_startproc
+ 122              		@ args = 0, pretend = 0, frame = 8
+ 123              		@ frame_needed = 0, uses_anonymous_args = 0
+ 124              		.loc 1 42 69 is_stmt 0 view .LVU25
+ 125 0000 30B5     		push	{r4, r5, lr}
+ 126              		.cfi_def_cfa_offset 12
+ 127              		.cfi_offset 4, -12
+ 128              		.cfi_offset 5, -8
+ 129              		.cfi_offset 14, -4
+ 130 0002 83B0     		sub	sp, sp, #12
+ 131              		.cfi_def_cfa_offset 24
+ 132 0004 0400     		movs	r4, r0
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccNGicgd.s 			page 4
+
+
+  43:Core/Src/MCP3914.c ****     uint8_t REG = 0x40 | (reg << 1);
+ 133              		.loc 1 43 5 is_stmt 1 view .LVU26
+ 134              		.loc 1 43 24 is_stmt 0 view .LVU27
+ 135 0006 4900     		lsls	r1, r1, #1
+ 136              	.LVL10:
+ 137              		.loc 1 43 24 view .LVU28
+ 138 0008 4023     		movs	r3, #64
+ 139 000a 1943     		orrs	r1, r3
+ 140              	.LVL11:
+  44:Core/Src/MCP3914.c ****     uint8_t sendData[4] = {REG, data[0], data[1], data[2]};
+ 141              		.loc 1 44 5 is_stmt 1 view .LVU29
+ 142              		.loc 1 44 13 is_stmt 0 view .LVU30
+ 143 000c 01AD     		add	r5, sp, #4
+ 144 000e 2970     		strb	r1, [r5]
+ 145              		.loc 1 44 37 view .LVU31
+ 146 0010 1378     		ldrb	r3, [r2]
+ 147              		.loc 1 44 13 view .LVU32
+ 148 0012 6B70     		strb	r3, [r5, #1]
+ 149 0014 5378     		ldrb	r3, [r2, #1]
+ 150 0016 AB70     		strb	r3, [r5, #2]
+ 151 0018 9378     		ldrb	r3, [r2, #2]
+ 152 001a EB70     		strb	r3, [r5, #3]
+  45:Core/Src/MCP3914.c **** 
+  46:Core/Src/MCP3914.c ****     HAL_GPIO_WritePin(dev->Port, dev->Pin, GPIO_PIN_RESET); //enable SPI by setting CS low
+ 153              		.loc 1 46 5 is_stmt 1 view .LVU33
+ 154 001c 0189     		ldrh	r1, [r0, #8]
+ 155              	.LVL12:
+ 156              		.loc 1 46 5 is_stmt 0 view .LVU34
+ 157 001e 4068     		ldr	r0, [r0, #4]
+ 158              	.LVL13:
+ 159              		.loc 1 46 5 view .LVU35
+ 160 0020 0022     		movs	r2, #0
+ 161              	.LVL14:
+ 162              		.loc 1 46 5 view .LVU36
+ 163 0022 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 164              	.LVL15:
+  47:Core/Src/MCP3914.c ****     HAL_SPI_Transmit(dev->spiHandle, sendData, 4, HAL_MAX_DELAY);
+ 165              		.loc 1 47 5 is_stmt 1 view .LVU37
+ 166 0026 0123     		movs	r3, #1
+ 167 0028 2068     		ldr	r0, [r4]
+ 168 002a 5B42     		rsbs	r3, r3, #0
+ 169 002c 0422     		movs	r2, #4
+ 170 002e 2900     		movs	r1, r5
+ 171 0030 FFF7FEFF 		bl	HAL_SPI_Transmit
+ 172              	.LVL16:
+  48:Core/Src/MCP3914.c ****     HAL_GPIO_WritePin(dev->Port, dev->Pin, GPIO_PIN_SET); //disable SPI by setting CS high    
+ 173              		.loc 1 48 5 view .LVU38
+ 174 0034 2189     		ldrh	r1, [r4, #8]
+ 175 0036 6068     		ldr	r0, [r4, #4]
+ 176 0038 0122     		movs	r2, #1
+ 177 003a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 178              	.LVL17:
+  49:Core/Src/MCP3914.c **** 
+  50:Core/Src/MCP3914.c **** }...
+ 179              		.loc 1 50 1 is_stmt 0 view .LVU39
+ 180 003e 03B0     		add	sp, sp, #12
+ 181              		@ sp needed
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccNGicgd.s 			page 5
+
+
+ 182              	.LVL18:
+ 183              		.loc 1 50 1 view .LVU40
+ 184 0040 30BD     		pop	{r4, r5, pc}
+ 185              		.cfi_endproc
+ 186              	.LFE42:
+ 188              		.section	.text.MCP3914_Initialise,"ax",%progbits
+ 189              		.align	1
+ 190              		.global	MCP3914_Initialise
+ 191              		.syntax unified
+ 192              		.code	16
+ 193              		.thumb_func
+ 195              	MCP3914_Initialise:
+ 196              	.LVL19:
+ 197              	.LFB40:
+   8:Core/Src/MCP3914.c **** void MCP3914_Initialise(MCP3914 *dev, SPI_HandleTypeDef *spiHandle, GPIO_TypeDef *Port, uint16_t Pi
+ 198              		.loc 1 8 102 is_stmt 1 view -0
+ 199              		.cfi_startproc
+ 200              		@ args = 0, pretend = 0, frame = 8
+ 201              		@ frame_needed = 0, uses_anonymous_args = 0
+   8:Core/Src/MCP3914.c **** void MCP3914_Initialise(MCP3914 *dev, SPI_HandleTypeDef *spiHandle, GPIO_TypeDef *Port, uint16_t Pi
+ 202              		.loc 1 8 102 is_stmt 0 view .LVU42
+ 203 0000 10B5     		push	{r4, lr}
+ 204              		.cfi_def_cfa_offset 8
+ 205              		.cfi_offset 4, -8
+ 206              		.cfi_offset 14, -4
+ 207 0002 82B0     		sub	sp, sp, #8
+ 208              		.cfi_def_cfa_offset 16
+ 209 0004 0400     		movs	r4, r0
+  10:Core/Src/MCP3914.c ****     dev->spiHandle  =   spiHandle;
+ 210              		.loc 1 10 5 is_stmt 1 view .LVU43
+  10:Core/Src/MCP3914.c ****     dev->spiHandle  =   spiHandle;
+ 211              		.loc 1 10 21 is_stmt 0 view .LVU44
+ 212 0006 0160     		str	r1, [r0]
+  11:Core/Src/MCP3914.c ****     dev->Port       =   Port;
+ 213              		.loc 1 11 5 is_stmt 1 view .LVU45
+  11:Core/Src/MCP3914.c ****     dev->Port       =   Port;
+ 214              		.loc 1 11 21 is_stmt 0 view .LVU46
+ 215 0008 4260     		str	r2, [r0, #4]
+  12:Core/Src/MCP3914.c ****     dev->Pin        =   Pin;
+ 216              		.loc 1 12 5 is_stmt 1 view .LVU47
+  12:Core/Src/MCP3914.c ****     dev->Pin        =   Pin;
+ 217              		.loc 1 12 21 is_stmt 0 view .LVU48
+ 218 000a 0381     		strh	r3, [r0, #8]
+  13:Core/Src/MCP3914.c ****     dev->adcData[0] =   0x00;
+ 219              		.loc 1 13 5 is_stmt 1 view .LVU49
+  13:Core/Src/MCP3914.c ****     dev->adcData[0] =   0x00;
+ 220              		.loc 1 13 21 is_stmt 0 view .LVU50
+ 221 000c 0023     		movs	r3, #0
+ 222              	.LVL20:
+  13:Core/Src/MCP3914.c ****     dev->adcData[0] =   0x00;
+ 223              		.loc 1 13 21 view .LVU51
+ 224 000e 8372     		strb	r3, [r0, #10]
+  14:Core/Src/MCP3914.c ****     dev->adcData[1] =   0x00;
+ 225              		.loc 1 14 5 is_stmt 1 view .LVU52
+  14:Core/Src/MCP3914.c ****     dev->adcData[1] =   0x00;
+ 226              		.loc 1 14 21 is_stmt 0 view .LVU53
+ 227 0010 C372     		strb	r3, [r0, #11]
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccNGicgd.s 			page 6
+
+
+  15:Core/Src/MCP3914.c ****     dev->adcData[2] =   0x00;
+ 228              		.loc 1 15 5 is_stmt 1 view .LVU54
+  15:Core/Src/MCP3914.c ****     dev->adcData[2] =   0x00;
+ 229              		.loc 1 15 21 is_stmt 0 view .LVU55
+ 230 0012 0373     		strb	r3, [r0, #12]
+  17:Core/Src/MCP3914.c ****     uint8_t MCP3914_CONFIG1_CLKINTEN[3] =   {0x00, 0x00, 0x00}; //WRITE THIS TO CONFIG1 TO ENABLE I
+ 231              		.loc 1 17 5 is_stmt 1 view .LVU56
+  17:Core/Src/MCP3914.c ****     uint8_t MCP3914_CONFIG1_CLKINTEN[3] =   {0x00, 0x00, 0x00}; //WRITE THIS TO CONFIG1 TO ENABLE I
+ 232              		.loc 1 17 13 is_stmt 0 view .LVU57
+ 233 0014 0322     		movs	r2, #3
+ 234              	.LVL21:
+  17:Core/Src/MCP3914.c ****     uint8_t MCP3914_CONFIG1_CLKINTEN[3] =   {0x00, 0x00, 0x00}; //WRITE THIS TO CONFIG1 TO ENABLE I
+ 235              		.loc 1 17 13 view .LVU58
+ 236 0016 0021     		movs	r1, #0
+ 237              	.LVL22:
+  17:Core/Src/MCP3914.c ****     uint8_t MCP3914_CONFIG1_CLKINTEN[3] =   {0x00, 0x00, 0x00}; //WRITE THIS TO CONFIG1 TO ENABLE I
+ 238              		.loc 1 17 13 view .LVU59
+ 239 0018 01A8     		add	r0, sp, #4
+ 240              	.LVL23:
+  17:Core/Src/MCP3914.c ****     uint8_t MCP3914_CONFIG1_CLKINTEN[3] =   {0x00, 0x00, 0x00}; //WRITE THIS TO CONFIG1 TO ENABLE I
+ 241              		.loc 1 17 13 view .LVU60
+ 242 001a FFF7FEFF 		bl	memset
+ 243              	.LVL24:
+  19:Core/Src/MCP3914.c ****     MCP3914_WriteRegister(dev, MCP3914_REG_CONFIG1, MCP3914_CONFIG1_CLKINTEN); //ENABLES INTERNAL C
+ 244              		.loc 1 19 5 is_stmt 1 view .LVU61
+ 245 001e 01AA     		add	r2, sp, #4
+ 246 0020 0E21     		movs	r1, #14
+ 247 0022 2000     		movs	r0, r4
+ 248 0024 FFF7FEFF 		bl	MCP3914_WriteRegister
+ 249              	.LVL25:
+  21:Core/Src/MCP3914.c **** }
+ 250              		.loc 1 21 1 is_stmt 0 view .LVU62
+ 251 0028 02B0     		add	sp, sp, #8
+ 252              		@ sp needed
+ 253              	.LVL26:
+  21:Core/Src/MCP3914.c **** }
+ 254              		.loc 1 21 1 view .LVU63
+ 255 002a 10BD     		pop	{r4, pc}
+ 256              		.cfi_endproc
+ 257              	.LFE40:
+ 259              		.text
+ 260              	.Letext0:
+ 261              		.file 2 "C:/Users/gamin/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 262              		.file 3 "C:/Users/gamin/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 263              		.file 4 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f051x8.h"
+ 264              		.file 5 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h"
+ 265              		.file 6 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h"
+ 266              		.file 7 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h"
+ 267              		.file 8 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_spi.h"
+ 268              		.file 9 "Core/Inc/MCP3914.h"
+ 269              		.file 10 "<built-in>"
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccNGicgd.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 MCP3914.c
+C:\Users\gamin\AppData\Local\Temp\ccNGicgd.s:19     .text.MCP3914_ReadRegister:00000000 $t
+C:\Users\gamin\AppData\Local\Temp\ccNGicgd.s:25     .text.MCP3914_ReadRegister:00000000 MCP3914_ReadRegister
+C:\Users\gamin\AppData\Local\Temp\ccNGicgd.s:111    .text.MCP3914_WriteRegister:00000000 $t
+C:\Users\gamin\AppData\Local\Temp\ccNGicgd.s:117    .text.MCP3914_WriteRegister:00000000 MCP3914_WriteRegister
+C:\Users\gamin\AppData\Local\Temp\ccNGicgd.s:189    .text.MCP3914_Initialise:00000000 $t
+C:\Users\gamin\AppData\Local\Temp\ccNGicgd.s:195    .text.MCP3914_Initialise:00000000 MCP3914_Initialise
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_SPI_TransmitReceive
+HAL_SPI_Transmit
+memset

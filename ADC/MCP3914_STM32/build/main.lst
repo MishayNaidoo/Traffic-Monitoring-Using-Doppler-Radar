@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
   31:Core/Src/main.c **** 
   32:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
   33:Core/Src/main.c **** /* USER CODE BEGIN PD */
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 2
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 2
 
 
   34:Core/Src/main.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
   88:Core/Src/main.c **** 
   89:Core/Src/main.c ****   /* USER CODE END SysInit */
   90:Core/Src/main.c **** 
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 3
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 3
 
 
   91:Core/Src/main.c ****   /* Initialize all configured peripherals */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  145:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL12;
  146:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV1;
  147:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 4
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 4
 
 
  148:Core/Src/main.c ****   {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  202:Core/Src/main.c ****   if (HAL_SPI_Init(&hspi1) != HAL_OK)
  203:Core/Src/main.c ****   {
  204:Core/Src/main.c ****     Error_Handler();
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 5
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 5
 
 
  205:Core/Src/main.c ****   }
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
   31              		.cfi_def_cfa_offset 20
   32              		.cfi_offset 4, -20
   33              		.cfi_offset 5, -16
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 6
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 6
 
 
   34              		.cfi_offset 6, -12
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  261:Core/Src/main.c **** 
  262:Core/Src/main.c ****   /*Configure GPIO pin Output Level */
  263:Core/Src/main.c ****   HAL_GPIO_WritePin(GPIOC, CS_Pin|LD4_Pin|LD3_Pin, GPIO_PIN_RESET);
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 7
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 7
 
 
   81              		.loc 1 263 3 view .LVU15
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  122 0064 03A9     		add	r1, sp, #12
  123 0066 2800     		movs	r0, r5
  124 0068 FFF7FEFF 		bl	HAL_GPIO_Init
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 8
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 8
 
 
  125              	.LVL3:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  169 0008 134F     		ldr	r7, .L5
  170 000a 0022     		movs	r2, #0
  171 000c 1021     		movs	r1, #16
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 9
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 9
 
 
  172              	.LVL5:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  291:Core/Src/main.c **** }
  221              		.loc 1 291 1 view .LVU49
  222 0052 07B0     		add	sp, sp, #28
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 10
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 10
 
 
  223              		@ sp needed
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  274 0018 2100     		movs	r1, r4
  275 001a FFF7FEFF 		bl	HAL_SPI_Transmit
  276              	.LVL18:
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 11
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 11
 
 
  297:Core/Src/main.c ****     HAL_GPIO_WritePin(CS_GPIO_Port, CS_Pin, GPIO_PIN_SET); //disable SPI by setting CS high
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
    6:Drivers/CMSIS/Include/cmsis_gcc.h ****  ******************************************************************************/
    7:Drivers/CMSIS/Include/cmsis_gcc.h **** /*
    8:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Copyright (c) 2009-2018 Arm Limited. All rights reserved.
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 12
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 12
 
 
    9:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
   63:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   64:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED_STRUCT
   65:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 13
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 13
 
 
   66:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  120:Drivers/CMSIS/Include/cmsis_gcc.h ****     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
  121:Drivers/CMSIS/Include/cmsis_gcc.h ****   @{
  122:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 14
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 14
 
 
  123:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  346 0000 10B5     		push	{r4, lr}
  347              		.cfi_def_cfa_offset 8
  348              		.cfi_offset 4, -8
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 15
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 15
 
 
  349              		.cfi_offset 14, -4
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  196:Core/Src/main.c ****   hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
  386              		.loc 1 196 23 is_stmt 0 view .LVU84
  387 0028 0362     		str	r3, [r0, #32]
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 16
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 16
 
 
  197:Core/Src/main.c ****   hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  428              		.syntax unified
  429              		.code	16
  430              		.thumb_func
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 17
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 17
 
 
  432              	MX_USART1_UART_Init:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  234:Core/Src/main.c ****   huart1.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
  470              		.loc 1 234 28 is_stmt 0 view .LVU116
  471 001c C361     		str	r3, [r0, #28]
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 18
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 18
 
 
  235:Core/Src/main.c ****   huart1.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  133:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
  518              		.loc 1 133 3 view .LVU127
  133:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 19
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 19
 
 
  519              		.loc 1 133 22 is_stmt 0 view .LVU128
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  558 0032 9B03     		lsls	r3, r3, #14
  559 0034 1493     		str	r3, [sp, #80]
  146:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 20
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 20
 
 
  560              		.loc 1 146 3 is_stmt 1 view .LVU144
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  597              		.loc 1 165 3 is_stmt 1 view .LVU161
  165:Core/Src/main.c ****   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
  598              		.loc 1 165 38 is_stmt 0 view .LVU162
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 21
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 21
 
 
  599 005e 0023     		movs	r3, #0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
   78:Core/Src/main.c **** 
  647              		.loc 1 78 3 view .LVU171
  648 0004 FFF7FEFF 		bl	HAL_Init
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 22
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 22
 
 
  649              	.LVL34:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  686              		.loc 1 102 3 is_stmt 1 view .LVU188
  102:Core/Src/main.c ****   uint8_t VREFExtEN[4] = {0x5C, 0x00, 0x00, 0x80}; //enables vrefext by writing to config 1
  687              		.loc 1 102 11 is_stmt 0 view .LVU189
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 23
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 23
 
 
  688 0030 084B     		ldr	r3, .L31
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  731      00000000 
  732              		.global	hspi1
  733              		.section	.bss.hspi1,"aw",%nobits
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 24
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 24
 
 
  734              		.align	2
@@ -1402,38 +1402,38 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 1
  750              		.file 12 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h"
  751              		.file 13 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h"
  752              		.file 14 "<built-in>"
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s 			page 25
+ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s 			page 25
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:19     .text.MX_GPIO_Init:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:133    .text.MX_GPIO_Init:00000070 $d
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:139    .rodata.MCP3914Read.str1.4:00000000 $d
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:143    .text.MCP3914Read:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:149    .text.MCP3914Read:00000000 MCP3914Read
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:231    .text.MCP3914Read:00000058 $d
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:737    .bss.hspi1:00000000 hspi1
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:730    .bss.huart1:00000000 huart1
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:239    .text.MCP3914Write:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:245    .text.MCP3914Write:00000000 MCP3914Write
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:291    .text.MCP3914Write:0000002c $d
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:297    .text.Error_Handler:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:303    .text.Error_Handler:00000000 Error_Handler
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:335    .text.MX_SPI1_Init:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:340    .text.MX_SPI1_Init:00000000 MX_SPI1_Init
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:421    .text.MX_SPI1_Init:00000044 $d
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:427    .text.MX_USART1_UART_Init:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:432    .text.MX_USART1_UART_Init:00000000 MX_USART1_UART_Init
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:495    .text.MX_USART1_UART_Init:00000030 $d
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:501    .text.SystemClock_Config:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:507    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:629    .text.main:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:635    .text.main:00000000 main
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:720    .text.main:00000054 $d
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:727    .bss.huart1:00000000 $d
-C:\Users\gamin\AppData\Local\Temp\ccWcTpnA.s:734    .bss.hspi1:00000000 $d
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:19     .text.MX_GPIO_Init:00000000 $t
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:133    .text.MX_GPIO_Init:00000070 $d
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:139    .rodata.MCP3914Read.str1.4:00000000 $d
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:143    .text.MCP3914Read:00000000 $t
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:149    .text.MCP3914Read:00000000 MCP3914Read
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:231    .text.MCP3914Read:00000058 $d
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:737    .bss.hspi1:00000000 hspi1
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:730    .bss.huart1:00000000 huart1
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:239    .text.MCP3914Write:00000000 $t
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:245    .text.MCP3914Write:00000000 MCP3914Write
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:291    .text.MCP3914Write:0000002c $d
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:297    .text.Error_Handler:00000000 $t
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:303    .text.Error_Handler:00000000 Error_Handler
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:335    .text.MX_SPI1_Init:00000000 $t
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:340    .text.MX_SPI1_Init:00000000 MX_SPI1_Init
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:421    .text.MX_SPI1_Init:00000044 $d
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:427    .text.MX_USART1_UART_Init:00000000 $t
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:432    .text.MX_USART1_UART_Init:00000000 MX_USART1_UART_Init
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:495    .text.MX_USART1_UART_Init:00000030 $d
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:501    .text.SystemClock_Config:00000000 $t
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:507    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:629    .text.main:00000000 $t
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:635    .text.main:00000000 main
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:720    .text.main:00000054 $d
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:727    .bss.huart1:00000000 $d
+C:\Users\gamin\AppData\Local\Temp\ccYS49lq.s:734    .bss.hspi1:00000000 $d
 
 UNDEFINED SYMBOLS
 memset
