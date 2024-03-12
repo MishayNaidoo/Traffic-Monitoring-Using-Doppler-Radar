@@ -1,0 +1,10 @@
+11:49:56 **** Incremental Build of configuration Debug for project STM32F051_ADC_DMA ****
+make -j8 all 
+arm-none-eabi-size   STM32F051_ADC_DMA.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15512	     20	   1932	  17464	   4438	STM32F051_ADC_DMA.elf
+Finished building: default.size.stdout
+ 
+
+11:49:56 Build Finished. 0 errors, 0 warnings. (took 316ms)
+
