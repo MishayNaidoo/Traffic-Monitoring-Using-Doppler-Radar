@@ -1,0 +1,10 @@
+11:08:18 **** Incremental Build of configuration Debug for project STM32L432BU6_ADC_CUBEIDE ****
+make -j8 all 
+arm-none-eabi-size   STM32L432BU6_ADC_CUBEIDE.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41096	    508	   6236	  47840	   bae0	STM32L432BU6_ADC_CUBEIDE.elf
+Finished building: default.size.stdout
+ 
+
+11:08:18 Build Finished. 0 errors, 0 warnings. (took 360ms)
+

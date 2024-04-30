@@ -1679,3 +1679,85 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-02-27 10:31:52.527
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2024-04-24 15:42:37.931 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_ZA
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-04-24 15:42:58.256
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-04-24 15:42:58.472
+!MESSAGE Log4j initialized with config file E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-04-24 15:43:13.525
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-04-24 16:00:55.297
+!MESSAGE Indexed 'STM32L432BU6_LED_BLINK_CUBEIDE' (21 sources, 82 headers) in 3.81 sec: 5,422 declarations; 30,671 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0055%)
+!SESSION 2024-04-24 18:37:04.838 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_ZA
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-04-24 18:37:39.974
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-04-24 18:37:40.308
+!MESSAGE Log4j initialized with config file E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-04-24 18:37:52.847
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-04-24 18:40:01.640
+!MESSAGE Indexed 'STM32L432BU6_ADC_CUBEIDE' (21 sources, 82 headers) in 3.55 sec: 5,422 declarations; 30,671 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0055%)
+!SESSION 2024-04-29 15:57:50.327 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_ZA
+Framework arguments:  E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\STM32L432BU6_ADC_CUBEIDE\STM32L432BU6_ADC_CUBEIDE Debug.launch
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\STM32L432BU6_ADC_CUBEIDE\STM32L432BU6_ADC_CUBEIDE Debug.launch
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-04-29 15:58:08.648
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-04-29 15:58:08.886
+!MESSAGE Log4j initialized with config file E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-04-29 15:58:27.467
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2024-04-29 16:26:25.397 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_ZA
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-04-29 16:26:43.719
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-04-29 16:26:43.807
+!MESSAGE Log4j initialized with config file E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-04-29 16:26:51.151
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2024-04-30 10:44:55.172 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_ZA
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-04-30 10:45:13.002
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-04-30 10:45:13.266
+!MESSAGE Log4j initialized with config file E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-04-30 10:45:31.037
+!MESSAGE Started RMI Server, listening on port 41337

@@ -1,8 +1,10 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32F051_ADC_DMA Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32_UART_DMA Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32F051_ADC_DMA Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32_UART_DMA Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32L432BU6_LED_BLINK_CUBEIDE Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32L432BU6_ADC_CUBEIDE Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32F051_ADC_DMA\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32F051_ADC_DMA\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32L432BU6_ADC_CUBEIDE\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32L432BU6_LED_BLINK_CUBEIDE\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32_UART_DMA\ Debug/activeLaunchMode=run
