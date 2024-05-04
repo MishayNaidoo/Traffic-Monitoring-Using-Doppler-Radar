@@ -387,11 +387,11 @@
   },
   "pcbnew": {
     "last_paths": {
-      "gencad": "",
+      "gencad": "STM32L4_Project.cad",
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "STM32L4_Project.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
