@@ -1,7 +1,7 @@
 import serial
-import struct
 
-ser = serial.Serial('COM10', baudrate=12000000)  # Adjust 'COMx' and baudrate
+
+ser = serial.Serial('COM7', baudrate=12000000)  # Adjust 'COMx' and baudrate
 
 try:
     with open('E:/UCT/Masters/Traffic-Monitoring-Using-Doppler-Radar/ADC/output.txt', 'w') as file:
