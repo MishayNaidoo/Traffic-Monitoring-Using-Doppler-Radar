@@ -33,7 +33,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define BUFFER_SIZE 30  // Adjust the buffer size as needed
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -49,14 +49,12 @@ I2S_HandleTypeDef hi2s3;
 SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi2;
 DMA_HandleTypeDef hdma_spi2_rx;
+DMA_HandleTypeDef hdma_spi2_tx;
 
 TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN PV */
 static MCP3914 adc;
-char usb_data[10];
-static uint8_t adcData[];
-static uint8_t counter = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -69,7 +67,9 @@ static void MX_SPI1_Init(void);
 static void MX_SPI2_Init(void);
 static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
-void delay_us (uint16_t us);
+char buffer[BUFFER_SIZE];  // Define a buffer to store the formatted ADC data
+uint8_t buffer_index = 0;  // Index to keep track of the current position in the buffer
+uint8_t raw[3];
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -115,22 +115,76 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim1);
   MCP3914_Initialise(&adc, &hspi2, NCS_GPIO_Port, NCS_Pin);
+
+  // ARRAY TO SET OSR TO 32 BY WRITING TO CONFIG0
+  uint8_t osr32[3];
+
+  // Extract the individual bytes using bitwise operations
+  osr32[0] = (MCP3914_OSR_64 >> 16) & 0xFF; // Most significant byte
+  osr32[1] = (MCP3914_OSR_64 >> 8) & 0xFF;  // Middle byte
+  osr32[2] = MCP3914_OSR_64 & 0xFF;         // Least significant byte
+
+  MCP3914_WriteRegister(&adc, MCP3914_REG_CONFIG0, osr32);
+
+  // Function to transmit data over CDC
+  void transmitData() {
+      CDC_Transmit_FS(buffer, buffer_index);  // Transmit data stored in the buffer
+      buffer_index = 0;  // Reset buffer index after transmission
+  }
+
+  HAL_TIM_Base_Start(&htim1);
+  uint16_t timer_val;
+  uint32_t dataBuffer[100];
+  uint32_t test;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-  { 
-    // MCP3914_ReadRegister(&adc, MCP3914_REG_CHANNEL_2);
-    // int formatted_length = sprintf(usb_data, "%02X%02X%02X\r\n", adc.adcData[0], adc.adcData[1], adc.adcData[2]);
-    // CDC_Transmit_FS((uint8_t*)usb_data, formatted_length);
-    //delay_us(10000);
+  {
 
-    if (counter == 9)
-    {
-      CDC_Transmit_FS(adcData, 12);
-      counter = 0;
+    // timer_val = __HAL_TIM_GET_COUNTER(&htim1);
+    for (int i = 0; i < 100; i++) {
+        MCP3914_ReadRegister(&adc, MCP3914_REG_CHANNEL_1);
+        // Combine adc.adcData into a single uint32_t
+        uint32_t value = (adc.adcData[2] << 16) | (adc.adcData[1] << 8) | adc.adcData[0];
+        dataBuffer[i] = value;
     }
+
+
+    //MCP3914_ReadRegister(&adc, MCP3914_REG_CHANNEL_1);
+    //test = adc.adcData;
+    CDC_Transmit_FS(dataBuffer, sizeof(dataBuffer));
+    
+    
+    // for(int i=0; i<99; i++)
+    // {
+    //   MCP3914_ReadRegister(&adc, MCP3914_REG_CHANNEL_1);
+    //   CDC_Transmit_FS(adc.adcData, 3);
+    //   //char buffer[3]; 
+    //   //sprintf(buffer, "%02X%02X%02X\r\n",adc.adcData[0], adc.adcData[1], adc.adcData[2]);
+    //   //CDC_Transmit_FS(buffer, strlen(buffer));
+    // }
+
+    // timer_val = __HAL_TIM_GET_COUNTER(&htim1) - timer_val;
+    // char timer_buffer[20]; // Adjust buffer size as needed
+    // sprintf(timer_buffer, "\r\n%lu\r\n", timer_val); // Assuming timer_val is of type uint32_t
+    // HAL_Delay(1000);
+    // CDC_Transmit_FS(timer_buffer, strlen(timer_buffer));
+    //HAL_Delay(1000);
+
+    //Your ADC reading and data formatting code
+        // MCP3914_ReadRegister(&adc, MCP3914_REG_CHANNEL_1);
+        // // Store the raw ADC data in the buffer
+        // buffer[buffer_index++] = adc.adcData[0];
+        // buffer[buffer_index++] = adc.adcData[1];
+        // buffer[buffer_index++] = adc.adcData[2];
+
+        // // Check if buffer is full and transmit data if needed
+        // if (buffer_index >= BUFFER_SIZE) {
+        //     transmitData();
+        // }
+   
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -348,7 +402,7 @@ static void MX_TIM1_Init(void)
   htim1.Instance = TIM1;
   htim1.Init.Prescaler = 168-1;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 22-1;
+  htim1.Init.Period = 65536-1;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
@@ -386,6 +440,9 @@ static void MX_DMA_Init(void)
   /* DMA1_Stream3_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream3_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream3_IRQn);
+  /* DMA1_Stream4_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream4_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream4_IRQn);
 
 }
 
@@ -486,24 +543,6 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void delay_us (uint16_t us)
-{
-	__HAL_TIM_SET_COUNTER(&htim1,0);  // set the counter value a 0
-	while (__HAL_TIM_GET_COUNTER(&htim1) < us);  // wait for the counter to reach the us input in the parameter
-}
-
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-  if(htim = &htim1)
-  {
-    MCP3914_ReadRegister(&adc, MCP3914_REG_CHANNEL_2);
-    adcData[counter] = adc.adcData[0];
-    adcData[counter + 1] = adc.adcData[1];
-    adcData[counter + 2] = adc.adcData[2];
-    counter = counter + 3;
-  }
-}
-
 /* USER CODE END 4 */
 
 /**

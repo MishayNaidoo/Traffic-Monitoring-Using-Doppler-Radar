@@ -48,8 +48,14 @@
 #define MCP3914_REG_LOCKCRC         0x1F
 
 
-
-
+/*
+    DEVICE CONFIGURATIONS
+*/
+#define MCP3914_Reset               0xFFFF00 
+#define MCP3914_OSR_32              0x380050 // SETS THE OSR TO 32 AND THE PRESCALER TO 1. WITH A 10MHz CLOCK THIS GIVES A SAMPLING RATE OF 78.125 KSPS
+#define MCP3914_OSR_4096            0x38E050 // SETS THE OSR TO 4096 AND THE PRESCALER TO 1. WITH A 10MHz CLOCK THIS GIVES A SAMPLING RATE OF 610.35 SPS
+#define MCP3914_OSR_64              0x382050 // SETS THE OSR TO 64 AND THE PRESCALER TO 1. WITH A 10MHz CLOCK THIS GIVES A SAMPLING RATE OF 39.062 KSPS
+#define MCP3914_VREFEXT_EN          0x000080 // ENABLES VREF EXT BY WRITING TO CONFIG1            
 
 /*
     ADC STRUCT
@@ -62,12 +68,14 @@ typedef struct{
 
     uint8_t adcData[3];
 
+    uint8_t *dmaData;
+
 } MCP3914;
 
 /*
     INITIALISATION
 */
-void MCP3914_Initialise(MCP3914 *dev, SPI_HandleTypeDef *spiHandle, GPIO_TypeDef *Port, uint16_t Pin);
+void MCP3914_Initialise(MCP3914 *dev, SPI_HandleTypeDef *spiHandle, GPIO_TypeDef *Port, uint16_t Pin, uint8_t BUFFER_SIZE);
 
 
 /*
