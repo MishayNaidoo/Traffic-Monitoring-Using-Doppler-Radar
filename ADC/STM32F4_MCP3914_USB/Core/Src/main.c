@@ -33,7 +33,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define BUFFER_SIZE 6  // Adjust the buffer size as needed
+#define BUFFER_SIZE 12  // Adjust the buffer size as needed
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -57,8 +57,6 @@ TIM_HandleTypeDef htim1;
 static MCP3914 adc;
 uint8_t spiComplete = 0;
 uint8_t spiHalfComplete = 0;
-uint8_t bufPointer;
-uint8_t txrxCount = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -142,18 +140,6 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  //MCP3914_ReadRegister_DMA(&adc, MCP3914_REG_CHANNEL_1, BUFFER_SIZE);
-  
-  uint8_t REG = 0x41 | (MCP3914_REG_CHANNEL_1 << 1);
-  uint8_t sendData[BUFFER_SIZE+1];
-  sendData[0] = REG;
-  uint8_t receiveData[BUFFER_SIZE+1];
-  HAL_GPIO_WritePin(NCS_GPIO_Port, NCS_Pin, GPIO_PIN_RESET); //enable SPI by setting CS low
-  if(HAL_SPI_TransmitReceive_DMA(&hspi2, sendData, receiveData, BUFFER_SIZE+1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  //HAL_GPIO_WritePin(NCS_GPIO_Port, NCS_Pin, GPIO_PIN_SET); //enable SPI by setting CS low
 
   while (1)
   {
@@ -161,39 +147,17 @@ int main(void)
     //HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
      if(spiHalfComplete == 1)
      {
-      // for(int i=0; i<BUFFER_SIZE; i++)
-      // {
-      //   adc.dmaData[i] = receiveData[i+1];
-      // }
-      //uint8_t test = 0;
-      //CDC_Transmit_FS((uint8_t *)test, 1);
-      //CDC_Transmit_FS(receiveData+1, (sizeof(receiveData)-1)/2);
-      //HAL_Delay(1000);
-      //HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
       spiHalfComplete = 0;
      }
 
      if(spiComplete == 1)
      {
-      for(int i=0; i<BUFFER_SIZE; i++)
-      {
-        adc.dmaData[i] = receiveData[i+1];
-      }
-      //uint8_t test = 0;
-      //CDC_Transmit_FS((uint8_t *)test, 1);
-      //CDC_Transmit_FS(receiveData+1+BUFFER_SIZE/2, (sizeof(receiveData)-1)/2);
-      //HAL_Delay(1000);
-      CDC_Transmit_FS(adc.dmaData, sizeof(adc.dmaData));
-      HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
       spiComplete = 0;
      }
-    // MCP3914_ReadRegister_Buffer(&adc, MCP3914_REG_CHANNEL_1, BUFFER_SIZE);
-    // CDC_Transmit_FS(adc.dmaData, sizeof(adc.dmaData));
-    // MCP3914_ReadRegister(&adc, MCP3914_REG_CHANNEL_1);
-    // CDC_Transmit_FS(adc.adcData, sizeof(adc.adcData));
-    
-    // HAL_Delay(1000);
-   
+
+    //  MCP3914_ReadRegister_Buffer(&adc, MCP3914_REG_CHANNEL_1, BUFFER_SIZE);
+     MCP3914_ReadRegister(&adc, MCP3914_REG_CHANNEL_1);
+     CDC_Transmit_FS(adc.adcData, sizeof(adc.adcData));
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -555,30 +519,11 @@ static void MX_GPIO_Init(void)
 void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi)
 {
   spiComplete = 1;
-
-  // HAL_GPIO_WritePin(NCS_GPIO_Port, NCS_Pin, GPIO_PIN_SET); //disable SPI by setting CS high
-  // HAL_SPI_DMAStop(&hspi2);
-
-  // uint8_t REG = 0x41 | (MCP3914_REG_CHANNEL_1 << 1);
-  // uint8_t sendData[BUFFER_SIZE+1];
-  // sendData[0] = REG;
-  // uint8_t receiveData[BUFFER_SIZE+1];
-
-  // HAL_GPIO_WritePin(NCS_GPIO_Port, NCS_Pin, GPIO_PIN_RESET); //enable SPI by setting CS low
-  // if(HAL_SPI_TransmitReceive_DMA(&hspi2, sendData, receiveData, BUFFER_SIZE+1) != HAL_OK)
-  // {
-  //   Error_Handler();
-  // }
-  //MCP3914_ReadRegister_DMA(&adc, MCP3914_REG_CHANNEL_1, BUFFER_SIZE);
-  
-  // HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_SET);
-  // HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_RESET);
 }
 
 void HAL_SPI_TxRxHalfCpltCallback(SPI_HandleTypeDef *hspi)
 {
   spiHalfComplete = 1;
-  //HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
 }
 /* USER CODE END 4 */
 
