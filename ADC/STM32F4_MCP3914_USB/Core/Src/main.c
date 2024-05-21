@@ -33,7 +33,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define BUFFER_SIZE 30  // Adjust the buffer size as needed
+#define BUFFER_SIZE 6  // Adjust the buffer size as needed
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -55,6 +55,10 @@ TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN PV */
 static MCP3914 adc;
+uint8_t spiComplete = 0;
+uint8_t spiHalfComplete = 0;
+uint8_t bufPointer;
+uint8_t txrxCount = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -67,9 +71,7 @@ static void MX_SPI1_Init(void);
 static void MX_SPI2_Init(void);
 static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
-char buffer[BUFFER_SIZE];  // Define a buffer to store the formatted ADC data
-uint8_t buffer_index = 0;  // Index to keep track of the current position in the buffer
-uint8_t raw[3];
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -113,77 +115,84 @@ int main(void)
   MX_USB_DEVICE_Init();
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start_IT(&htim1);
-  MCP3914_Initialise(&adc, &hspi2, NCS_GPIO_Port, NCS_Pin);
+  MCP3914_Initialise(&adc, &hspi2, NCS_GPIO_Port, NCS_Pin, BUFFER_SIZE);
 
   // ARRAY TO SET OSR TO 32 BY WRITING TO CONFIG0
   uint8_t osr32[3];
 
   // Extract the individual bytes using bitwise operations
-  osr32[0] = (MCP3914_OSR_64 >> 16) & 0xFF; // Most significant byte
-  osr32[1] = (MCP3914_OSR_64 >> 8) & 0xFF;  // Middle byte
-  osr32[2] = MCP3914_OSR_64 & 0xFF;         // Least significant byte
+  osr32[0] = (MCP3914_OSR_32 >> 16) & 0xFF; // Most significant byte
+  osr32[1] = (MCP3914_OSR_32 >> 8) & 0xFF;  // Middle byte
+  osr32[2] = MCP3914_OSR_32 & 0xFF;         // Least significant byte
 
   MCP3914_WriteRegister(&adc, MCP3914_REG_CONFIG0, osr32);
 
-  // Function to transmit data over CDC
-  void transmitData() {
-      CDC_Transmit_FS(buffer, buffer_index);  // Transmit data stored in the buffer
-      buffer_index = 0;  // Reset buffer index after transmission
-  }
+  // ARRAY TO STATUSCOM TO SINGLE CHANNEL
+  uint8_t singleChannel[3];
 
-  HAL_TIM_Base_Start(&htim1);
-  uint16_t timer_val;
-  uint32_t dataBuffer[100];
-  uint32_t test;
+  // Extract the individual bytes using bitwise operations
+  singleChannel[0] = (MCP3914_SINGLECHANNEL >> 16) & 0xFF; // Most significant byte
+  singleChannel[1] = (MCP3914_SINGLECHANNEL >> 8) & 0xFF;  // Middle byte
+  singleChannel[2] = MCP3914_SINGLECHANNEL & 0xFF;         // Least significant byte
+
+  MCP3914_WriteRegister(&adc, MCP3914_REG_STATUSCOM, singleChannel);
+
+  //uint8_t dataBuffer[BUFFER_SIZE];
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  //MCP3914_ReadRegister_DMA(&adc, MCP3914_REG_CHANNEL_1, BUFFER_SIZE);
+  
+  uint8_t REG = 0x41 | (MCP3914_REG_CHANNEL_1 << 1);
+  uint8_t sendData[BUFFER_SIZE+1];
+  sendData[0] = REG;
+  uint8_t receiveData[BUFFER_SIZE+1];
+  HAL_GPIO_WritePin(NCS_GPIO_Port, NCS_Pin, GPIO_PIN_RESET); //enable SPI by setting CS low
+  if(HAL_SPI_TransmitReceive_DMA(&hspi2, sendData, receiveData, BUFFER_SIZE+1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  //HAL_GPIO_WritePin(NCS_GPIO_Port, NCS_Pin, GPIO_PIN_SET); //enable SPI by setting CS low
+
   while (1)
   {
-
-    // timer_val = __HAL_TIM_GET_COUNTER(&htim1);
-    for (int i = 0; i < 100; i++) {
-        MCP3914_ReadRegister(&adc, MCP3914_REG_CHANNEL_1);
-        // Combine adc.adcData into a single uint32_t
-        uint32_t value = (adc.adcData[2] << 16) | (adc.adcData[1] << 8) | adc.adcData[0];
-        dataBuffer[i] = value;
-    }
-
-
-    //MCP3914_ReadRegister(&adc, MCP3914_REG_CHANNEL_1);
-    //test = adc.adcData;
-    CDC_Transmit_FS(dataBuffer, sizeof(dataBuffer));
     
-    
-    // for(int i=0; i<99; i++)
-    // {
-    //   MCP3914_ReadRegister(&adc, MCP3914_REG_CHANNEL_1);
-    //   CDC_Transmit_FS(adc.adcData, 3);
-    //   //char buffer[3]; 
-    //   //sprintf(buffer, "%02X%02X%02X\r\n",adc.adcData[0], adc.adcData[1], adc.adcData[2]);
-    //   //CDC_Transmit_FS(buffer, strlen(buffer));
-    // }
+    //HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
+     if(spiHalfComplete == 1)
+     {
+      // for(int i=0; i<BUFFER_SIZE; i++)
+      // {
+      //   adc.dmaData[i] = receiveData[i+1];
+      // }
+      //uint8_t test = 0;
+      //CDC_Transmit_FS((uint8_t *)test, 1);
+      //CDC_Transmit_FS(receiveData+1, (sizeof(receiveData)-1)/2);
+      //HAL_Delay(1000);
+      //HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
+      spiHalfComplete = 0;
+     }
 
-    // timer_val = __HAL_TIM_GET_COUNTER(&htim1) - timer_val;
-    // char timer_buffer[20]; // Adjust buffer size as needed
-    // sprintf(timer_buffer, "\r\n%lu\r\n", timer_val); // Assuming timer_val is of type uint32_t
+     if(spiComplete == 1)
+     {
+      for(int i=0; i<BUFFER_SIZE; i++)
+      {
+        adc.dmaData[i] = receiveData[i+1];
+      }
+      //uint8_t test = 0;
+      //CDC_Transmit_FS((uint8_t *)test, 1);
+      //CDC_Transmit_FS(receiveData+1+BUFFER_SIZE/2, (sizeof(receiveData)-1)/2);
+      //HAL_Delay(1000);
+      CDC_Transmit_FS(adc.dmaData, sizeof(adc.dmaData));
+      HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
+      spiComplete = 0;
+     }
+    // MCP3914_ReadRegister_Buffer(&adc, MCP3914_REG_CHANNEL_1, BUFFER_SIZE);
+    // CDC_Transmit_FS(adc.dmaData, sizeof(adc.dmaData));
+    // MCP3914_ReadRegister(&adc, MCP3914_REG_CHANNEL_1);
+    // CDC_Transmit_FS(adc.adcData, sizeof(adc.adcData));
+    
     // HAL_Delay(1000);
-    // CDC_Transmit_FS(timer_buffer, strlen(timer_buffer));
-    //HAL_Delay(1000);
-
-    //Your ADC reading and data formatting code
-        // MCP3914_ReadRegister(&adc, MCP3914_REG_CHANNEL_1);
-        // // Store the raw ADC data in the buffer
-        // buffer[buffer_index++] = adc.adcData[0];
-        // buffer[buffer_index++] = adc.adcData[1];
-        // buffer[buffer_index++] = adc.adcData[2];
-
-        // // Check if buffer is full and transmit data if needed
-        // if (buffer_index >= BUFFER_SIZE) {
-        //     transmitData();
-        // }
    
     /* USER CODE END WHILE */
 
@@ -365,7 +374,7 @@ static void MX_SPI2_Init(void)
   hspi2.Init.DataSize = SPI_DATASIZE_8BIT;
   hspi2.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi2.Init.CLKPhase = SPI_PHASE_1EDGE;
-  hspi2.Init.NSS = SPI_NSS_SOFT;
+  hspi2.Init.NSS = SPI_NSS_HARD_OUTPUT;
   hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
   hspi2.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi2.Init.TIMode = SPI_TIMODE_DISABLE;
@@ -543,6 +552,34 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi)
+{
+  spiComplete = 1;
+
+  // HAL_GPIO_WritePin(NCS_GPIO_Port, NCS_Pin, GPIO_PIN_SET); //disable SPI by setting CS high
+  // HAL_SPI_DMAStop(&hspi2);
+
+  // uint8_t REG = 0x41 | (MCP3914_REG_CHANNEL_1 << 1);
+  // uint8_t sendData[BUFFER_SIZE+1];
+  // sendData[0] = REG;
+  // uint8_t receiveData[BUFFER_SIZE+1];
+
+  // HAL_GPIO_WritePin(NCS_GPIO_Port, NCS_Pin, GPIO_PIN_RESET); //enable SPI by setting CS low
+  // if(HAL_SPI_TransmitReceive_DMA(&hspi2, sendData, receiveData, BUFFER_SIZE+1) != HAL_OK)
+  // {
+  //   Error_Handler();
+  // }
+  //MCP3914_ReadRegister_DMA(&adc, MCP3914_REG_CHANNEL_1, BUFFER_SIZE);
+  
+  // HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_SET);
+  // HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_RESET);
+}
+
+void HAL_SPI_TxRxHalfCpltCallback(SPI_HandleTypeDef *hspi)
+{
+  spiHalfComplete = 1;
+  //HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
+}
 /* USER CODE END 4 */
 
 /**
@@ -552,6 +589,7 @@ static void MX_GPIO_Init(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
+  HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
   /* User can add his own implementation to report the HAL error return state */
   __disable_irq();
   while (1)

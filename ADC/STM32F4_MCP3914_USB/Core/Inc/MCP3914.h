@@ -2,6 +2,7 @@
 #define MCP3914_SPI_DRIVER_H
 
 #include "stm32f4xx_hal.h"
+#include <stdlib.h>
 
 /*
     DEFINES
@@ -55,7 +56,8 @@
 #define MCP3914_OSR_32              0x380050 // SETS THE OSR TO 32 AND THE PRESCALER TO 1. WITH A 10MHz CLOCK THIS GIVES A SAMPLING RATE OF 78.125 KSPS
 #define MCP3914_OSR_4096            0x38E050 // SETS THE OSR TO 4096 AND THE PRESCALER TO 1. WITH A 10MHz CLOCK THIS GIVES A SAMPLING RATE OF 610.35 SPS
 #define MCP3914_OSR_64              0x382050 // SETS THE OSR TO 64 AND THE PRESCALER TO 1. WITH A 10MHz CLOCK THIS GIVES A SAMPLING RATE OF 39.062 KSPS
-#define MCP3914_VREFEXT_EN          0x000080 // ENABLES VREF EXT BY WRITING TO CONFIG1            
+#define MCP3914_VREFEXT_EN          0x000080 // ENABLES VREF EXT BY WRITING TO CONFIG1
+#define MCP3914_SINGLECHANNEL       0x290000 // MAKES CONTINUOUS READ ONLY READ FROM A SINGLE CHANNEL BY WRITING TO STATUSCOM            
 
 /*
     ADC STRUCT
@@ -67,8 +69,7 @@ typedef struct{
     uint16_t Pin;
 
     uint8_t adcData[3];
-
-    uint8_t *dmaData;
+    uint8_t dmaData[36];
 
 } MCP3914;
 
@@ -82,6 +83,8 @@ void MCP3914_Initialise(MCP3914 *dev, SPI_HandleTypeDef *spiHandle, GPIO_TypeDef
     DATA ACQUISITION
 */
 void MCP3914_ReadRegister(MCP3914 *dev, uint8_t reg);
+void MCP3914_ReadRegister_Buffer(MCP3914 *dev, uint8_t reg, uint8_t BUFFER_SIZE);
+void MCP3914_ReadRegister_DMA(MCP3914 *dev, uint8_t reg, uint8_t BUFFER_SIZE);
 void MCP3914_WriteRegister(MCP3914 *dev, uint8_t reg, uint8_t *data);
 
 

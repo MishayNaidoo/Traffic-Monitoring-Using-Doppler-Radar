@@ -7,19 +7,17 @@
 
 void MCP3914_Initialise(MCP3914 *dev, SPI_HandleTypeDef *spiHandle, GPIO_TypeDef *Port, uint16_t Pin, uint8_t BUFFER_SIZE){
 
-    dev->spiHandle  =   spiHandle;
-    dev->Port       =   Port;
-    dev->Pin        =   Pin;
-    dev->adcData[0] =   0x00;
-    dev->adcData[1] =   0x00;
-    dev->adcData[2] =   0x00;
-
-    dev->dmaData = (uint8_t *)malloc(BUFFER_SIZE * sizeof(uint8_t));
+    dev->spiHandle   =   spiHandle;
+    dev->Port        =   Port;
+    dev->Pin         =   Pin;
+    dev->adcData[0]  =   0x00;
+    dev->adcData[1]  =   0x00;
+    dev->adcData[2]  =   0x00;
     
-    for(int i=0; i<BUFFER_SIZE; i++)
-    {
-        dev->dmaData[i] = 0x00;
-    }
+    // for(int i=0; i<BUFFER_SIZE; i++)
+    // {
+    //     dev->dmaData[i] = 0x00;
+    // }
 
     uint8_t MCP3914_CONFIG1_RESET[3] =   {0xFF, 0xFF, 0x00}; //WRITE THIS TO CONFIG1 TO RESET ADC
     uint8_t MCP3914_CONFIG1_CLKINTEN[3] =   {0x00, 0x00, 0x00}; //WRITE THIS TO CONFIG1 TO ENABLE INTERNAL CLOCK
@@ -48,18 +46,60 @@ void MCP3914_ReadRegister(MCP3914 *dev, uint8_t reg){
     dev->adcData[2] =   receiveData[3];
 }
 
-void MCP3914_ReadRegister_DMA(MCP3914 *dev, uint8_t reg){
+void MCP3914_ReadRegister_Buffer(MCP3914 *dev, uint8_t reg, uint8_t BUFFER_SIZE){
     uint8_t REG = 0x41 | (reg << 1);
-    uint8_t sendData[4] = {REG, 0x00, 0x00, 0x00};
-    uint8_t receiveData[4];
+    uint8_t sendData[BUFFER_SIZE+1];
+    sendData[0] = REG;
+    // for(int i=0; i<BUFFER_SIZE+1; i+=4)
+    // {
+    //     sendData[i] = REG;
+    //     sendData[i+1] = 0x00;
+    //     sendData[i+2] = 0x00;
+    //     sendData[i+3] = 0x00;
+    // }
+    uint8_t receiveData[BUFFER_SIZE+1];
 
     HAL_GPIO_WritePin(dev->Port, dev->Pin, GPIO_PIN_RESET); //enable SPI by setting CS low
-    HAL_SPI_TransmitReceive_DMA(dev->spiHandle, sendData, receiveData, 4, HAL_MAX_DELAY);
+    if(HAL_SPI_TransmitReceive(dev->spiHandle, sendData, receiveData, BUFFER_SIZE + 1, HAL_MAX_DELAY) != HAL_OK)
+    {
+        Error_Handler();
+    }
     HAL_GPIO_WritePin(dev->Port, dev->Pin, GPIO_PIN_SET); //disable SPI by setting CS high
 
-    dev->adcData[0] =   receiveData[1];
-    dev->adcData[1] =   receiveData[2];
-    dev->adcData[2] =   receiveData[3];
+    // //dev->dmaData = receiveData;
+    for(int i=0; i<BUFFER_SIZE; i++)
+    {
+        dev->dmaData[i] = receiveData[i+1];
+    }
+}
+
+void MCP3914_ReadRegister_DMA(MCP3914 *dev, uint8_t reg, uint8_t BUFFER_SIZE){
+    uint8_t REG = 0x41 | (reg << 1);
+    uint8_t sendData[BUFFER_SIZE+1];
+    sendData[0] = REG;
+    // for(int i=0; i<BUFFER_SIZE+1; i+=4)
+    // {
+    //     sendData[i] = REG;
+    //     sendData[i+1] = 0x00;
+    //     sendData[i+2] = 0x00;
+    //     sendData[i+3] = 0x00;
+    // }
+    uint8_t receiveData[BUFFER_SIZE+1];
+
+    //HAL_GPIO_WritePin(dev->Port, dev->Pin, GPIO_PIN_SET); //disable SPI by setting CS high
+    HAL_GPIO_WritePin(dev->Port, dev->Pin, GPIO_PIN_RESET); //enable SPI by setting CS low
+    if(HAL_SPI_TransmitReceive_DMA(dev->spiHandle, sendData, dev->dmaData, BUFFER_SIZE + 1) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    HAL_GPIO_WritePin(dev->Port, dev->Pin, GPIO_PIN_SET); //disable SPI by setting CS high
+    
+
+    //dev->dmaData = receiveData;
+    // for(int i=0; i<BUFFER_SIZE; i++)
+    // {
+    //     dev->dmaData[i] = receiveData[i+1];
+    // }
 }
 
 void MCP3914_WriteRegister(MCP3914 *dev, uint8_t reg, uint8_t *data){

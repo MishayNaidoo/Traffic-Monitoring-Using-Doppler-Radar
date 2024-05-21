@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
+ARM GAS  /tmp/ccWty8KI.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
   27:USB_DEVICE/Target/usbd_conf.c **** #include "usbd_cdc.h"
   28:USB_DEVICE/Target/usbd_conf.c **** 
   29:USB_DEVICE/Target/usbd_conf.c **** /* USER CODE BEGIN Includes */
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 2
+ARM GAS  /tmp/ccWty8KI.s 			page 2
 
 
   30:USB_DEVICE/Target/usbd_conf.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
   71:USB_DEVICE/Target/usbd_conf.c ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
   43              		.loc 1 71 3 is_stmt 1 view .LVU2
   44              		.loc 1 71 20 is_stmt 0 view .LVU3
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 3
+ARM GAS  /tmp/ccWty8KI.s 			page 3
 
 
   45 0004 0023     		movs	r3, #0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
   63              		@ sp needed
   64 001a 70BD     		pop	{r4, r5, r6, pc}
   65              	.LVL2:
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 4
+ARM GAS  /tmp/ccWty8KI.s 			page 4
 
 
   66              	.L4:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
   91:USB_DEVICE/Target/usbd_conf.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
  105              		.loc 1 91 26 is_stmt 0 view .LVU23
  106 004a 0223     		movs	r3, #2
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 5
+ARM GAS  /tmp/ccWty8KI.s 			page 5
 
 
  107 004c 0493     		str	r3, [sp, #16]
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  101:USB_DEVICE/Target/usbd_conf.c ****     HAL_NVIC_EnableIRQ(OTG_FS_IRQn);
  145              		.loc 1 101 5 view .LVU40
  146 007a 2A46     		mov	r2, r5
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 6
+ARM GAS  /tmp/ccWty8KI.s 			page 6
 
 
  147 007c 2946     		mov	r1, r5
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  118:USB_DEVICE/Target/usbd_conf.c **** 
  119:USB_DEVICE/Target/usbd_conf.c ****     /**USB_OTG_FS GPIO Configuration
  120:USB_DEVICE/Target/usbd_conf.c ****     PA9     ------> USB_OTG_FS_VBUS
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 7
+ARM GAS  /tmp/ccWty8KI.s 			page 7
 
 
  121:USB_DEVICE/Target/usbd_conf.c ****     PA10     ------> USB_OTG_FS_ID
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  230              	.LVL14:
  231              	.LFB140:
  135:USB_DEVICE/Target/usbd_conf.c **** 
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 8
+ARM GAS  /tmp/ccWty8KI.s 			page 8
 
 
  136:USB_DEVICE/Target/usbd_conf.c **** /**
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  161:USB_DEVICE/Target/usbd_conf.c **** {
  263              		.loc 1 161 1 is_stmt 1 view -0
  264              		.cfi_startproc
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 9
+ARM GAS  /tmp/ccWty8KI.s 			page 9
 
 
  265              		@ args = 0, pretend = 0, frame = 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  305              		.loc 1 177 3 is_stmt 1 view .LVU66
  306 0002 01EBC103 		add	r3, r1, r1, lsl #3
  307 0006 00EB8303 		add	r3, r0, r3, lsl #2
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 10
+ARM GAS  /tmp/ccWty8KI.s 			page 10
 
 
  308 000a 1A6A     		ldr	r2, [r3, #32]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  350              		.align	1
  351              		.global	HAL_PCD_ResetCallback
  352              		.syntax unified
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 11
+ARM GAS  /tmp/ccWty8KI.s 			page 11
 
 
  353              		.thumb
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  217:USB_DEVICE/Target/usbd_conf.c ****     Error_Handler();
  218:USB_DEVICE/Target/usbd_conf.c ****   }
  219:USB_DEVICE/Target/usbd_conf.c ****     /* Set Speed. */
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 12
+ARM GAS  /tmp/ccWty8KI.s 			page 12
 
 
  220:USB_DEVICE/Target/usbd_conf.c ****   USBD_LL_SetSpeed((USBD_HandleTypeDef*)hpcd->pData, speed);
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  420 0000 10B5     		push	{r4, lr}
  421              		.cfi_def_cfa_offset 8
  422              		.cfi_offset 4, -8
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 13
+ARM GAS  /tmp/ccWty8KI.s 			page 13
 
 
  423              		.cfi_offset 14, -4
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  467              	HAL_PCD_ResumeCallback:
  468              	.LVL37:
  469              	.LFB146:
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 14
+ARM GAS  /tmp/ccWty8KI.s 			page 14
 
 
  250:USB_DEVICE/Target/usbd_conf.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  276:USB_DEVICE/Target/usbd_conf.c **** static void PCD_ISOOUTIncompleteCallback(PCD_HandleTypeDef *hpcd, uint8_t epnum)
  277:USB_DEVICE/Target/usbd_conf.c **** #else
  278:USB_DEVICE/Target/usbd_conf.c **** void HAL_PCD_ISOOUTIncompleteCallback(PCD_HandleTypeDef *hpcd, uint8_t epnum)
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 15
+ARM GAS  /tmp/ccWty8KI.s 			page 15
 
 
  279:USB_DEVICE/Target/usbd_conf.c **** #endif /* USE_HAL_PCD_REGISTER_CALLBACKS */
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  296:USB_DEVICE/Target/usbd_conf.c ****   USBD_LL_IsoINIncomplete((USBD_HandleTypeDef*)hpcd->pData, epnum);
  539              		.loc 1 296 3 is_stmt 1 view .LVU113
  540 0002 D0F8E004 		ldr	r0, [r0, #1248]
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 16
+ARM GAS  /tmp/ccWty8KI.s 			page 16
 
 
  541              	.LVL44:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  583              		.syntax unified
  584              		.thumb
  585              		.thumb_func
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 17
+ARM GAS  /tmp/ccWty8KI.s 			page 17
 
 
  587              	HAL_PCD_DisconnectCallback:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  335:USB_DEVICE/Target/usbd_conf.c ****   */
  336:USB_DEVICE/Target/usbd_conf.c **** USBD_StatusTypeDef USBD_LL_Init(USBD_HandleTypeDef *pdev)
  337:USB_DEVICE/Target/usbd_conf.c **** {
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 18
+ARM GAS  /tmp/ccWty8KI.s 			page 18
 
 
  620              		.loc 1 337 1 is_stmt 1 view -0
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  632              	.LVL53:
  633              		.loc 1 379 1 view .LVU132
  634 0006 7047     		bx	lr
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 19
+ARM GAS  /tmp/ccWty8KI.s 			page 19
 
 
  635              	.LVL54:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  672 0028 4272     		strb	r2, [r0, #9]
  349:USB_DEVICE/Target/usbd_conf.c ****   hpcd_USB_OTG_FS.Init.low_power_enable = DISABLE;
  673              		.loc 1 349 3 is_stmt 1 view .LVU150
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 20
+ARM GAS  /tmp/ccWty8KI.s 			page 20
 
 
  349:USB_DEVICE/Target/usbd_conf.c ****   hpcd_USB_OTG_FS.Init.low_power_enable = DISABLE;
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  713              	.LVL60:
  378:USB_DEVICE/Target/usbd_conf.c **** }
  714              		.loc 1 378 3 view .LVU166
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 21
+ARM GAS  /tmp/ccWty8KI.s 			page 21
 
 
  715              		.loc 1 379 1 is_stmt 0 view .LVU167
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  410:USB_DEVICE/Target/usbd_conf.c ****   usb_status =  USBD_Get_USB_Status(hal_status);
  411:USB_DEVICE/Target/usbd_conf.c **** 
  412:USB_DEVICE/Target/usbd_conf.c ****   return usb_status;
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 22
+ARM GAS  /tmp/ccWty8KI.s 			page 22
 
 
  413:USB_DEVICE/Target/usbd_conf.c **** }
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  467:USB_DEVICE/Target/usbd_conf.c ****   return usb_status;
  468:USB_DEVICE/Target/usbd_conf.c **** }
  469:USB_DEVICE/Target/usbd_conf.c **** 
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 23
+ARM GAS  /tmp/ccWty8KI.s 			page 23
 
 
  470:USB_DEVICE/Target/usbd_conf.c **** /**
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  524:USB_DEVICE/Target/usbd_conf.c **** /**
  525:USB_DEVICE/Target/usbd_conf.c ****   * @brief  Returns Stall condition.
  526:USB_DEVICE/Target/usbd_conf.c ****   * @param  pdev: Device handle
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 24
+ARM GAS  /tmp/ccWty8KI.s 			page 24
 
 
  527:USB_DEVICE/Target/usbd_conf.c ****   * @param  ep_addr: Endpoint number
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  775              	.LVL69:
  536:USB_DEVICE/Target/usbd_conf.c ****   }
  776              		.loc 1 536 39 view .LVU182
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 25
+ARM GAS  /tmp/ccWty8KI.s 			page 25
 
 
  777 0028 987D     		ldrb	r0, [r3, #22]	@ zero_extendqisi2
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  581:USB_DEVICE/Target/usbd_conf.c **** 
  582:USB_DEVICE/Target/usbd_conf.c **** /**
  583:USB_DEVICE/Target/usbd_conf.c ****   * @brief  Prepares an endpoint for reception.
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 26
+ARM GAS  /tmp/ccWty8KI.s 			page 26
 
 
  584:USB_DEVICE/Target/usbd_conf.c ****   * @param  pdev: Device handle
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  822              	USBD_static_malloc:
  823              	.LVL74:
  824              	.LFB165:
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 27
+ARM GAS  /tmp/ccWty8KI.s 			page 27
 
 
  612:USB_DEVICE/Target/usbd_conf.c **** 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  639:USB_DEVICE/Target/usbd_conf.c **** 
  640:USB_DEVICE/Target/usbd_conf.c **** /**
  641:USB_DEVICE/Target/usbd_conf.c ****   * @brief  Dummy memory free
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 28
+ARM GAS  /tmp/ccWty8KI.s 			page 28
 
 
  642:USB_DEVICE/Target/usbd_conf.c ****   * @param  p: Pointer to allocated  memory address
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  894              		.syntax unified
  895              		.thumb
  896              		.thumb_func
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 29
+ARM GAS  /tmp/ccWty8KI.s 			page 29
 
 
  898              	USBD_Get_USB_Status:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  929 0010 0320     		movs	r0, #3
  930              	.LVL83:
  931              	.L65:
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 30
+ARM GAS  /tmp/ccWty8KI.s 			page 30
 
 
  680:USB_DEVICE/Target/usbd_conf.c ****     case HAL_TIMEOUT :
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  970              	.LVL88:
  395:USB_DEVICE/Target/usbd_conf.c **** }
  971              		.loc 1 395 3 is_stmt 1 view .LVU220
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 31
+ARM GAS  /tmp/ccWty8KI.s 			page 31
 
 
  396:USB_DEVICE/Target/usbd_conf.c **** 
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  1017              		.align	1
  1018              		.global	USBD_LL_Stop
  1019              		.syntax unified
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 32
+ARM GAS  /tmp/ccWty8KI.s 			page 32
 
 
  1020              		.thumb
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  1065              		.loc 1 441 1 is_stmt 1 view -0
  1066              		.cfi_startproc
  1067              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 33
+ARM GAS  /tmp/ccWty8KI.s 			page 33
 
 
  1068              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  1112              		@ frame_needed = 0, uses_anonymous_args = 0
  459:USB_DEVICE/Target/usbd_conf.c ****   HAL_StatusTypeDef hal_status = HAL_OK;
  1113              		.loc 1 459 1 is_stmt 0 view .LVU257
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 34
+ARM GAS  /tmp/ccWty8KI.s 			page 34
 
 
  1114 0000 08B5     		push	{r3, lr}
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  1158              	.LVL111:
  479:USB_DEVICE/Target/usbd_conf.c **** 
  1159              		.loc 1 479 3 view .LVU270
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 35
+ARM GAS  /tmp/ccWty8KI.s 			page 35
 
 
  481:USB_DEVICE/Target/usbd_conf.c **** 
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  499:USB_DEVICE/Target/usbd_conf.c **** 
  1203              		.loc 1 499 16 view .LVU284
  1204 0006 FFF7FEFF 		bl	HAL_PCD_EP_SetStall
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 36
+ARM GAS  /tmp/ccWty8KI.s 			page 36
 
 
  1205              	.LVL118:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  1248              	.LVL124:
  521:USB_DEVICE/Target/usbd_conf.c **** }
  1249              		.loc 1 521 3 is_stmt 1 view .LVU298
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 37
+ARM GAS  /tmp/ccWty8KI.s 			page 37
 
 
  522:USB_DEVICE/Target/usbd_conf.c **** 
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  1295              		.align	1
  1296              		.global	USBD_LL_Transmit
  1297              		.syntax unified
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 38
+ARM GAS  /tmp/ccWty8KI.s 			page 38
 
 
  1298              		.thumb
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  1343              		.loc 1 591 1 is_stmt 1 view -0
  1344              		.cfi_startproc
  1345              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 39
+ARM GAS  /tmp/ccWty8KI.s 			page 39
 
 
  1346              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2336,9 +2336,9 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  1385              		.text
  1386              	.Letext0:
  1387              		.file 2 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 1388              		.file 3 "C:/Users/gamin/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 1389              		.file 4 "C:/Users/gamin/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 40
+ 1388              		.file 3 "/home/mishay/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
+ 1389              		.file 4 "/home/mishay/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
+ARM GAS  /tmp/ccWty8KI.s 			page 40
 
 
  1390              		.file 5 "Drivers/CMSIS/Include/core_cm4.h"
@@ -2352,87 +2352,87 @@ ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 1
  1398              		.file 13 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h"
  1399              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
  1400              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 41
+ARM GAS  /tmp/ccWty8KI.s 			page 41
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usbd_conf.c
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:21     .text.HAL_PCD_MspInit:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:27     .text.HAL_PCD_MspInit:00000000 HAL_PCD_MspInit
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:160    .text.HAL_PCD_MspInit:0000008c $d
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:166    .text.HAL_PCD_MspDeInit:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:172    .text.HAL_PCD_MspDeInit:00000000 HAL_PCD_MspDeInit
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:217    .text.HAL_PCD_MspDeInit:00000028 $d
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:223    .text.HAL_PCD_SetupStageCallback:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:229    .text.HAL_PCD_SetupStageCallback:00000000 HAL_PCD_SetupStageCallback
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:254    .text.HAL_PCD_DataOutStageCallback:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:260    .text.HAL_PCD_DataOutStageCallback:00000000 HAL_PCD_DataOutStageCallback
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:287    .text.HAL_PCD_DataInStageCallback:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:293    .text.HAL_PCD_DataInStageCallback:00000000 HAL_PCD_DataInStageCallback
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:320    .text.HAL_PCD_SOFCallback:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:326    .text.HAL_PCD_SOFCallback:00000000 HAL_PCD_SOFCallback
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:350    .text.HAL_PCD_ResetCallback:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:356    .text.HAL_PCD_ResetCallback:00000000 HAL_PCD_ResetCallback
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:406    .text.HAL_PCD_SuspendCallback:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:412    .text.HAL_PCD_SuspendCallback:00000000 HAL_PCD_SuspendCallback
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:456    .text.HAL_PCD_SuspendCallback:0000002c $d
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:461    .text.HAL_PCD_ResumeCallback:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:467    .text.HAL_PCD_ResumeCallback:00000000 HAL_PCD_ResumeCallback
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:491    .text.HAL_PCD_ISOOUTIncompleteCallback:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:497    .text.HAL_PCD_ISOOUTIncompleteCallback:00000000 HAL_PCD_ISOOUTIncompleteCallback
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:521    .text.HAL_PCD_ISOINIncompleteCallback:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:527    .text.HAL_PCD_ISOINIncompleteCallback:00000000 HAL_PCD_ISOINIncompleteCallback
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:551    .text.HAL_PCD_ConnectCallback:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:557    .text.HAL_PCD_ConnectCallback:00000000 HAL_PCD_ConnectCallback
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:581    .text.HAL_PCD_DisconnectCallback:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:587    .text.HAL_PCD_DisconnectCallback:00000000 HAL_PCD_DisconnectCallback
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:611    .text.USBD_LL_Init:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:617    .text.USBD_LL_Init:00000000 USBD_LL_Init
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:726    .text.USBD_LL_Init:00000064 $d
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1383   .bss.hpcd_USB_OTG_FS:00000000 hpcd_USB_OTG_FS
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:731    .text.USBD_LL_IsStallEP:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:737    .text.USBD_LL_IsStallEP:00000000 USBD_LL_IsStallEP
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:785    .text.USBD_LL_GetRxDataSize:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:791    .text.USBD_LL_GetRxDataSize:00000000 USBD_LL_GetRxDataSize
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:816    .text.USBD_static_malloc:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:822    .text.USBD_static_malloc:00000000 USBD_static_malloc
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:840    .text.USBD_static_malloc:00000004 $d
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1376   .bss.mem.0:00000000 mem.0
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:845    .text.USBD_static_free:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:851    .text.USBD_static_free:00000000 USBD_static_free
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:865    .text.USBD_LL_Delay:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:871    .text.USBD_LL_Delay:00000000 USBD_LL_Delay
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:892    .text.USBD_Get_USB_Status:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:898    .text.USBD_Get_USB_Status:00000000 USBD_Get_USB_Status
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:912    .text.USBD_Get_USB_Status:00000008 $d
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:916    .text.USBD_Get_USB_Status:0000000c $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:939    .text.USBD_LL_DeInit:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:945    .text.USBD_LL_DeInit:00000000 USBD_LL_DeInit
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:978    .text.USBD_LL_Start:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:984    .text.USBD_LL_Start:00000000 USBD_LL_Start
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1017   .text.USBD_LL_Stop:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1023   .text.USBD_LL_Stop:00000000 USBD_LL_Stop
-ARM GAS  C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s 			page 42
+     /tmp/ccWty8KI.s:21     .text.HAL_PCD_MspInit:00000000 $t
+     /tmp/ccWty8KI.s:27     .text.HAL_PCD_MspInit:00000000 HAL_PCD_MspInit
+     /tmp/ccWty8KI.s:160    .text.HAL_PCD_MspInit:0000008c $d
+     /tmp/ccWty8KI.s:166    .text.HAL_PCD_MspDeInit:00000000 $t
+     /tmp/ccWty8KI.s:172    .text.HAL_PCD_MspDeInit:00000000 HAL_PCD_MspDeInit
+     /tmp/ccWty8KI.s:217    .text.HAL_PCD_MspDeInit:00000028 $d
+     /tmp/ccWty8KI.s:223    .text.HAL_PCD_SetupStageCallback:00000000 $t
+     /tmp/ccWty8KI.s:229    .text.HAL_PCD_SetupStageCallback:00000000 HAL_PCD_SetupStageCallback
+     /tmp/ccWty8KI.s:254    .text.HAL_PCD_DataOutStageCallback:00000000 $t
+     /tmp/ccWty8KI.s:260    .text.HAL_PCD_DataOutStageCallback:00000000 HAL_PCD_DataOutStageCallback
+     /tmp/ccWty8KI.s:287    .text.HAL_PCD_DataInStageCallback:00000000 $t
+     /tmp/ccWty8KI.s:293    .text.HAL_PCD_DataInStageCallback:00000000 HAL_PCD_DataInStageCallback
+     /tmp/ccWty8KI.s:320    .text.HAL_PCD_SOFCallback:00000000 $t
+     /tmp/ccWty8KI.s:326    .text.HAL_PCD_SOFCallback:00000000 HAL_PCD_SOFCallback
+     /tmp/ccWty8KI.s:350    .text.HAL_PCD_ResetCallback:00000000 $t
+     /tmp/ccWty8KI.s:356    .text.HAL_PCD_ResetCallback:00000000 HAL_PCD_ResetCallback
+     /tmp/ccWty8KI.s:406    .text.HAL_PCD_SuspendCallback:00000000 $t
+     /tmp/ccWty8KI.s:412    .text.HAL_PCD_SuspendCallback:00000000 HAL_PCD_SuspendCallback
+     /tmp/ccWty8KI.s:456    .text.HAL_PCD_SuspendCallback:0000002c $d
+     /tmp/ccWty8KI.s:461    .text.HAL_PCD_ResumeCallback:00000000 $t
+     /tmp/ccWty8KI.s:467    .text.HAL_PCD_ResumeCallback:00000000 HAL_PCD_ResumeCallback
+     /tmp/ccWty8KI.s:491    .text.HAL_PCD_ISOOUTIncompleteCallback:00000000 $t
+     /tmp/ccWty8KI.s:497    .text.HAL_PCD_ISOOUTIncompleteCallback:00000000 HAL_PCD_ISOOUTIncompleteCallback
+     /tmp/ccWty8KI.s:521    .text.HAL_PCD_ISOINIncompleteCallback:00000000 $t
+     /tmp/ccWty8KI.s:527    .text.HAL_PCD_ISOINIncompleteCallback:00000000 HAL_PCD_ISOINIncompleteCallback
+     /tmp/ccWty8KI.s:551    .text.HAL_PCD_ConnectCallback:00000000 $t
+     /tmp/ccWty8KI.s:557    .text.HAL_PCD_ConnectCallback:00000000 HAL_PCD_ConnectCallback
+     /tmp/ccWty8KI.s:581    .text.HAL_PCD_DisconnectCallback:00000000 $t
+     /tmp/ccWty8KI.s:587    .text.HAL_PCD_DisconnectCallback:00000000 HAL_PCD_DisconnectCallback
+     /tmp/ccWty8KI.s:611    .text.USBD_LL_Init:00000000 $t
+     /tmp/ccWty8KI.s:617    .text.USBD_LL_Init:00000000 USBD_LL_Init
+     /tmp/ccWty8KI.s:726    .text.USBD_LL_Init:00000064 $d
+     /tmp/ccWty8KI.s:1383   .bss.hpcd_USB_OTG_FS:00000000 hpcd_USB_OTG_FS
+     /tmp/ccWty8KI.s:731    .text.USBD_LL_IsStallEP:00000000 $t
+     /tmp/ccWty8KI.s:737    .text.USBD_LL_IsStallEP:00000000 USBD_LL_IsStallEP
+     /tmp/ccWty8KI.s:785    .text.USBD_LL_GetRxDataSize:00000000 $t
+     /tmp/ccWty8KI.s:791    .text.USBD_LL_GetRxDataSize:00000000 USBD_LL_GetRxDataSize
+     /tmp/ccWty8KI.s:816    .text.USBD_static_malloc:00000000 $t
+     /tmp/ccWty8KI.s:822    .text.USBD_static_malloc:00000000 USBD_static_malloc
+     /tmp/ccWty8KI.s:840    .text.USBD_static_malloc:00000004 $d
+     /tmp/ccWty8KI.s:1376   .bss.mem.0:00000000 mem.0
+     /tmp/ccWty8KI.s:845    .text.USBD_static_free:00000000 $t
+     /tmp/ccWty8KI.s:851    .text.USBD_static_free:00000000 USBD_static_free
+     /tmp/ccWty8KI.s:865    .text.USBD_LL_Delay:00000000 $t
+     /tmp/ccWty8KI.s:871    .text.USBD_LL_Delay:00000000 USBD_LL_Delay
+     /tmp/ccWty8KI.s:892    .text.USBD_Get_USB_Status:00000000 $t
+     /tmp/ccWty8KI.s:898    .text.USBD_Get_USB_Status:00000000 USBD_Get_USB_Status
+     /tmp/ccWty8KI.s:912    .text.USBD_Get_USB_Status:00000008 $d
+     /tmp/ccWty8KI.s:916    .text.USBD_Get_USB_Status:0000000c $t
+     /tmp/ccWty8KI.s:939    .text.USBD_LL_DeInit:00000000 $t
+     /tmp/ccWty8KI.s:945    .text.USBD_LL_DeInit:00000000 USBD_LL_DeInit
+     /tmp/ccWty8KI.s:978    .text.USBD_LL_Start:00000000 $t
+     /tmp/ccWty8KI.s:984    .text.USBD_LL_Start:00000000 USBD_LL_Start
+     /tmp/ccWty8KI.s:1017   .text.USBD_LL_Stop:00000000 $t
+     /tmp/ccWty8KI.s:1023   .text.USBD_LL_Stop:00000000 USBD_LL_Stop
+ARM GAS  /tmp/ccWty8KI.s 			page 42
 
 
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1056   .text.USBD_LL_OpenEP:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1062   .text.USBD_LL_OpenEP:00000000 USBD_LL_OpenEP
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1100   .text.USBD_LL_CloseEP:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1106   .text.USBD_LL_CloseEP:00000000 USBD_LL_CloseEP
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1139   .text.USBD_LL_FlushEP:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1145   .text.USBD_LL_FlushEP:00000000 USBD_LL_FlushEP
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1178   .text.USBD_LL_StallEP:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1184   .text.USBD_LL_StallEP:00000000 USBD_LL_StallEP
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1217   .text.USBD_LL_ClearStallEP:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1223   .text.USBD_LL_ClearStallEP:00000000 USBD_LL_ClearStallEP
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1256   .text.USBD_LL_SetUSBAddress:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1262   .text.USBD_LL_SetUSBAddress:00000000 USBD_LL_SetUSBAddress
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1295   .text.USBD_LL_Transmit:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1301   .text.USBD_LL_Transmit:00000000 USBD_LL_Transmit
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1334   .text.USBD_LL_PrepareReceive:00000000 $t
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1340   .text.USBD_LL_PrepareReceive:00000000 USBD_LL_PrepareReceive
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1373   .bss.mem.0:00000000 $d
-C:\Users\gamin\AppData\Local\Temp\ccCzAz4F.s:1380   .bss.hpcd_USB_OTG_FS:00000000 $d
+     /tmp/ccWty8KI.s:1056   .text.USBD_LL_OpenEP:00000000 $t
+     /tmp/ccWty8KI.s:1062   .text.USBD_LL_OpenEP:00000000 USBD_LL_OpenEP
+     /tmp/ccWty8KI.s:1100   .text.USBD_LL_CloseEP:00000000 $t
+     /tmp/ccWty8KI.s:1106   .text.USBD_LL_CloseEP:00000000 USBD_LL_CloseEP
+     /tmp/ccWty8KI.s:1139   .text.USBD_LL_FlushEP:00000000 $t
+     /tmp/ccWty8KI.s:1145   .text.USBD_LL_FlushEP:00000000 USBD_LL_FlushEP
+     /tmp/ccWty8KI.s:1178   .text.USBD_LL_StallEP:00000000 $t
+     /tmp/ccWty8KI.s:1184   .text.USBD_LL_StallEP:00000000 USBD_LL_StallEP
+     /tmp/ccWty8KI.s:1217   .text.USBD_LL_ClearStallEP:00000000 $t
+     /tmp/ccWty8KI.s:1223   .text.USBD_LL_ClearStallEP:00000000 USBD_LL_ClearStallEP
+     /tmp/ccWty8KI.s:1256   .text.USBD_LL_SetUSBAddress:00000000 $t
+     /tmp/ccWty8KI.s:1262   .text.USBD_LL_SetUSBAddress:00000000 USBD_LL_SetUSBAddress
+     /tmp/ccWty8KI.s:1295   .text.USBD_LL_Transmit:00000000 $t
+     /tmp/ccWty8KI.s:1301   .text.USBD_LL_Transmit:00000000 USBD_LL_Transmit
+     /tmp/ccWty8KI.s:1334   .text.USBD_LL_PrepareReceive:00000000 $t
+     /tmp/ccWty8KI.s:1340   .text.USBD_LL_PrepareReceive:00000000 USBD_LL_PrepareReceive
+     /tmp/ccWty8KI.s:1373   .bss.mem.0:00000000 $d
+     /tmp/ccWty8KI.s:1380   .bss.hpcd_USB_OTG_FS:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_Init
