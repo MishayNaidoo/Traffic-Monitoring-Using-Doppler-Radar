@@ -6,7 +6,7 @@ try:
     with open('E:/UCT/Masters/Traffic-Monitoring-Using-Doppler-Radar/ADC/output.txt', 'wb') as file:  # Use binary mode for writing raw data
         while True:
             # Read the raw binary data from the serial port
-            raw_data = ser.read(1024)  
+            raw_data = ser.read(2048)  
 
             # Write the raw data to the file
             file.write(raw_data)
