@@ -7,7 +7,7 @@ try:
     with open('E:/UCT/Masters/Traffic-Monitoring-Using-Doppler-Radar/ADC/output.txt', 'w') as file:
         while True:
             # Read the raw binary data from the serial port
-            raw_data = ser.read(1024)  
+            raw_data = ser.read(2048)  
 
             # Process or reformat the received raw data
             formatted_data = list(raw_data)
