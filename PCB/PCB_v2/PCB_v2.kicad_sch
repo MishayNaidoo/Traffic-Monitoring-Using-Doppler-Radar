@@ -1980,6 +1980,16 @@
 		)
 		(uuid "42a23793-0ac4-4be3-acc7-241d9894677b")
 	)
+	(text "Device configured in I2C mode\n"
+		(exclude_from_sim no)
+		(at 252.984 55.118 0)
+		(effects
+			(font
+				(size 0.635 0.635)
+			)
+		)
+		(uuid "45600942-55d7-4093-9157-385cac7633cb")
+	)
 	(text "Sets device address to 00\n"
 		(exclude_from_sim no)
 		(at 251.968 60.706 0)
