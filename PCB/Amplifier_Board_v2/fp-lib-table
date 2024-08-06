@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "LM358DR2G")(type "KiCad")(uri "${KIPRJMOD}/Symbols/LM358DR2G.pretty")(options "")(descr ""))
+)

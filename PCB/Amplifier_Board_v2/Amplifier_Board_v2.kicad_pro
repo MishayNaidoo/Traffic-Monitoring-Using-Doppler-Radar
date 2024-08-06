@@ -239,7 +239,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "ADC_Board.kicad_pro",
+    "filename": "Amplifier_Board_v2.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -334,11 +334,83 @@
           "label": "DNP",
           "name": "${DNP}",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Availability",
+          "name": "Availability",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Check_prices",
+          "name": "Check_prices",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description_1",
+          "name": "Description_1",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MANUFACTURER",
+          "name": "MANUFACTURER",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MF",
+          "name": "MF",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MP",
+          "name": "MP",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Package",
+          "name": "Package",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Price",
+          "name": "Price",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "SnapEDA_Link",
+          "name": "SnapEDA_Link",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC_Number",
+          "name": "LCSC_Number",
+          "show": true
         }
       ],
       "filter_string": "",
       "group_symbols": true,
-      "name": "Grouped By Value",
+      "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -383,20 +455,8 @@
   },
   "sheets": [
     [
-      "eacc446d-e8fa-4562-8add-376394061ee7",
+      "3d1f3801-abed-425b-b585-d1716d253b7d",
       "Root"
-    ],
-    [
-      "fc0ec921-db84-445a-913a-9e0496f6acff",
-      "ADAU1979"
-    ],
-    [
-      "c433d05d-4d04-4124-a78c-ffc3c5f159a2",
-      "STM32H7"
-    ],
-    [
-      "44c9f762-4e43-46b8-af21-8d6c6996fba8",
-      "PCM2900"
     ]
   ],
   "text_variables": {}
