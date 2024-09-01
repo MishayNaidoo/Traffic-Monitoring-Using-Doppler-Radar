@@ -1,0 +1,16 @@
+17:51:16 **** Incremental Build of configuration Debug for project STM32H7_ADC_CubeIDE ****
+make -j8 all 
+arm-none-eabi-gcc -o "STM32H7_ADC_CubeIDE.elf" @"objects.list"   -mcpu=cortex-m7 -T"E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE\STM32H750VBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32H7_ADC_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32H7_ADC_CubeIDE.elf
+ 
+arm-none-eabi-size  STM32H7_ADC_CubeIDE.elf 
+arm-none-eabi-objdump -h -S STM32H7_ADC_CubeIDE.elf  > "STM32H7_ADC_CubeIDE.list"
+   text	   data	    bss	    dec	    hex	filename
+  57964	    260	  20732	  78956	  1346c	STM32H7_ADC_CubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32H7_ADC_CubeIDE.list
+ 
+
+17:51:17 Build Finished. 0 errors, 0 warnings. (took 983ms)
+

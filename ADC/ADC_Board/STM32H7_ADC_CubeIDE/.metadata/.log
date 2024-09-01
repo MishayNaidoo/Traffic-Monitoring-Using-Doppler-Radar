@@ -1,0 +1,48 @@
+!SESSION 2024-08-30 14:52:47.232 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_ZA
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-08-30 14:53:04.467
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-08-30 14:53:04.469
+!MESSAGE Log4j2 initialized with config file E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-08-30 14:53:08.763
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-30 14:53:30.708
+!MESSAGE Indexed 'ADC_DMA_Transfer' (23 sources, 91 headers) in 5.08 sec: 8,961 declarations; 71,135 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0025%)
+!SESSION 2024-08-30 14:54:45.968 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_ZA
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-08-30 14:54:50.932
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-08-30 14:54:50.933
+!MESSAGE Log4j2 initialized with config file E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-08-30 14:54:57.577
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2024-08-30 14:56:23.331 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_ZA
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data file:/E:/UCT/Masters/Traffic-Monitoring-Using-Doppler-Radar/ADC/ADC_Board/STM32H7_ADC_CubeIDE/
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-08-30 14:56:28.818
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-08-30 14:56:28.819
+!MESSAGE Log4j2 initialized with config file E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-08-30 14:56:35.888
+!MESSAGE Started RMI Server, listening on port 41337

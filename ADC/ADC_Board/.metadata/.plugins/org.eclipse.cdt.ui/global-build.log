@@ -1,0 +1,196 @@
+16:20:19 **** Incremental Build of configuration Debug for project STM32H7_ADC_CubeIDE ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H750xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32H7_ADC_CubeIDE.elf" @"objects.list"   -mcpu=cortex-m7 -T"E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE\STM32H750VBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32H7_ADC_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32H7_ADC_CubeIDE.elf
+ 
+arm-none-eabi-size  STM32H7_ADC_CubeIDE.elf 
+arm-none-eabi-objdump -h -S STM32H7_ADC_CubeIDE.elf  > "STM32H7_ADC_CubeIDE.list"
+   text	   data	    bss	    dec	    hex	filename
+  59340	    260	  13100	  72700	  11bfc	STM32H7_ADC_CubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32H7_ADC_CubeIDE.list
+ 
+16:20:24 **** Incremental Build of configuration Debug for project STM32H7_ADC_CubeIDE ****
+make -j8 all 
+arm-none-eabi-size  STM32H7_ADC_CubeIDE.elf 
+   text	   data	    bss	    dec	    hex	filename
+  59340	    260	  13100	  72700	  11bfc	STM32H7_ADC_CubeIDE.elf
+Finished building: default.size.stdout
+ 
+16:40:20 **** Incremental Build of configuration Debug for project STM32H7_ADC_CubeIDE ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H750xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32H7_ADC_CubeIDE.elf" @"objects.list"   -mcpu=cortex-m7 -T"E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE\STM32H750VBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32H7_ADC_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32H7_ADC_CubeIDE.elf
+ 
+arm-none-eabi-size  STM32H7_ADC_CubeIDE.elf 
+arm-none-eabi-objdump -h -S STM32H7_ADC_CubeIDE.elf  > "STM32H7_ADC_CubeIDE.list"
+   text	   data	    bss	    dec	    hex	filename
+  59264	    260	  13100	  72624	  11bb0	STM32H7_ADC_CubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32H7_ADC_CubeIDE.list
+ 
+16:52:13 **** Incremental Build of configuration Debug for project STM32H7_ADC_CubeIDE ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H750xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32H7_ADC_CubeIDE.elf" @"objects.list"   -mcpu=cortex-m7 -T"E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE\STM32H750VBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32H7_ADC_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32H7_ADC_CubeIDE.elf
+ 
+arm-none-eabi-size  STM32H7_ADC_CubeIDE.elf 
+arm-none-eabi-objdump -h -S STM32H7_ADC_CubeIDE.elf  > "STM32H7_ADC_CubeIDE.list"
+   text	   data	    bss	    dec	    hex	filename
+  59264	    260	  11052	  70576	  113b0	STM32H7_ADC_CubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32H7_ADC_CubeIDE.list
+ 
+16:59:23 **** Incremental Build of configuration Debug for project STM32H7_ADC_CubeIDE ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H750xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32H7_ADC_CubeIDE.elf" @"objects.list"   -mcpu=cortex-m7 -T"E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE\STM32H750VBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32H7_ADC_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32H7_ADC_CubeIDE.elf
+ 
+arm-none-eabi-size  STM32H7_ADC_CubeIDE.elf 
+arm-none-eabi-objdump -h -S STM32H7_ADC_CubeIDE.elf  > "STM32H7_ADC_CubeIDE.list"
+   text	   data	    bss	    dec	    hex	filename
+  59264	    260	  19196	  78720	  13380	STM32H7_ADC_CubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32H7_ADC_CubeIDE.list
+ 
+17:09:47 **** Incremental Build of configuration Debug for project STM32H7_ADC_CubeIDE ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H750xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32H7_ADC_CubeIDE.elf" @"objects.list"   -mcpu=cortex-m7 -T"E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE\STM32H750VBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32H7_ADC_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32H7_ADC_CubeIDE.elf
+ 
+arm-none-eabi-size  STM32H7_ADC_CubeIDE.elf 
+arm-none-eabi-objdump -h -S STM32H7_ADC_CubeIDE.elf  > "STM32H7_ADC_CubeIDE.list"
+   text	   data	    bss	    dec	    hex	filename
+  59264	    260	  19196	  78720	  13380	STM32H7_ADC_CubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32H7_ADC_CubeIDE.list
+ 
+17:13:04 **** Incremental Build of configuration Debug for project STM32H7_ADC_CubeIDE ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32h7xx_hal_msp.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H750xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32h7xx_hal_msp.d" -MT"Core/Src/stm32h7xx_hal_msp.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32h7xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32h7xx_it.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H750xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32h7xx_it.d" -MT"Core/Src/stm32h7xx_it.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32h7xx_it.o"
+arm-none-eabi-gcc -o "STM32H7_ADC_CubeIDE.elf" @"objects.list"   -mcpu=cortex-m7 -T"E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE\STM32H750VBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32H7_ADC_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32H7_ADC_CubeIDE.elf
+ 
+arm-none-eabi-size  STM32H7_ADC_CubeIDE.elf 
+arm-none-eabi-objdump -h -S STM32H7_ADC_CubeIDE.elf  > "STM32H7_ADC_CubeIDE.list"
+   text	   data	    bss	    dec	    hex	filename
+  57904	    260	  19196	  77360	  12e30	STM32H7_ADC_CubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32H7_ADC_CubeIDE.list
+ 
+17:28:17 **** Incremental Build of configuration Debug for project STM32H7_ADC_CubeIDE ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H750xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32H7_ADC_CubeIDE.elf" @"objects.list"   -mcpu=cortex-m7 -T"E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE\STM32H750VBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32H7_ADC_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32H7_ADC_CubeIDE.elf
+ 
+arm-none-eabi-size  STM32H7_ADC_CubeIDE.elf 
+arm-none-eabi-objdump -h -S STM32H7_ADC_CubeIDE.elf  > "STM32H7_ADC_CubeIDE.list"
+   text	   data	    bss	    dec	    hex	filename
+  57904	    260	  19196	  77360	  12e30	STM32H7_ADC_CubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32H7_ADC_CubeIDE.list
+ 
+17:30:08 **** Incremental Build of configuration Debug for project STM32H7_ADC_CubeIDE ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H750xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32H7_ADC_CubeIDE.elf" @"objects.list"   -mcpu=cortex-m7 -T"E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE\STM32H750VBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32H7_ADC_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32H7_ADC_CubeIDE.elf
+ 
+arm-none-eabi-size  STM32H7_ADC_CubeIDE.elf 
+arm-none-eabi-objdump -h -S STM32H7_ADC_CubeIDE.elf  > "STM32H7_ADC_CubeIDE.list"
+   text	   data	    bss	    dec	    hex	filename
+  57904	    260	  19196	  77360	  12e30	STM32H7_ADC_CubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32H7_ADC_CubeIDE.list
+ 
+17:33:22 **** Incremental Build of configuration Debug for project STM32H7_ADC_CubeIDE ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H750xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32H7_ADC_CubeIDE.elf" @"objects.list"   -mcpu=cortex-m7 -T"E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE\STM32H750VBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32H7_ADC_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32H7_ADC_CubeIDE.elf
+ 
+arm-none-eabi-size  STM32H7_ADC_CubeIDE.elf 
+arm-none-eabi-objdump -h -S STM32H7_ADC_CubeIDE.elf  > "STM32H7_ADC_CubeIDE.list"
+   text	   data	    bss	    dec	    hex	filename
+  57920	    260	  19196	  77376	  12e40	STM32H7_ADC_CubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32H7_ADC_CubeIDE.list
+ 
+17:34:52 **** Incremental Build of configuration Debug for project STM32H7_ADC_CubeIDE ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H750xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32H7_ADC_CubeIDE.elf" @"objects.list"   -mcpu=cortex-m7 -T"E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE\STM32H750VBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32H7_ADC_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32H7_ADC_CubeIDE.elf
+ 
+arm-none-eabi-size  STM32H7_ADC_CubeIDE.elf 
+arm-none-eabi-objdump -h -S STM32H7_ADC_CubeIDE.elf  > "STM32H7_ADC_CubeIDE.list"
+   text	   data	    bss	    dec	    hex	filename
+  57904	    260	  19196	  77360	  12e30	STM32H7_ADC_CubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32H7_ADC_CubeIDE.list
+ 
+17:37:39 **** Incremental Build of configuration Debug for project STM32H7_ADC_CubeIDE ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H750xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32H7_ADC_CubeIDE.elf" @"objects.list"   -mcpu=cortex-m7 -T"E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE\STM32H750VBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32H7_ADC_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32H7_ADC_CubeIDE.elf
+ 
+arm-none-eabi-size  STM32H7_ADC_CubeIDE.elf 
+arm-none-eabi-objdump -h -S STM32H7_ADC_CubeIDE.elf  > "STM32H7_ADC_CubeIDE.list"
+   text	   data	    bss	    dec	    hex	filename
+  57904	    260	  19196	  77360	  12e30	STM32H7_ADC_CubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32H7_ADC_CubeIDE.list
+ 
+17:40:12 **** Incremental Build of configuration Debug for project STM32H7_ADC_CubeIDE ****
+make -j8 all 
+arm-none-eabi-size  STM32H7_ADC_CubeIDE.elf 
+   text	   data	    bss	    dec	    hex	filename
+  57904	    260	  19196	  77360	  12e30	STM32H7_ADC_CubeIDE.elf
+Finished building: default.size.stdout
+ 
+17:48:01 **** Incremental Build of configuration Debug for project STM32H7_ADC_CubeIDE ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H750xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32H7_ADC_CubeIDE.elf" @"objects.list"   -mcpu=cortex-m7 -T"E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE\STM32H750VBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32H7_ADC_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32H7_ADC_CubeIDE.elf
+ 
+arm-none-eabi-size  STM32H7_ADC_CubeIDE.elf 
+arm-none-eabi-objdump -h -S STM32H7_ADC_CubeIDE.elf  > "STM32H7_ADC_CubeIDE.list"
+   text	   data	    bss	    dec	    hex	filename
+  57964	    260	  19196	  77420	  12e6c	STM32H7_ADC_CubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32H7_ADC_CubeIDE.list
+ 
+17:51:16 **** Incremental Build of configuration Debug for project STM32H7_ADC_CubeIDE ****
+make -j8 all 
+arm-none-eabi-gcc -o "STM32H7_ADC_CubeIDE.elf" @"objects.list"   -mcpu=cortex-m7 -T"E:\UCT\Masters\Traffic-Monitoring-Using-Doppler-Radar\ADC\ADC_Board\STM32H7_ADC_CubeIDE\STM32H750VBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32H7_ADC_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32H7_ADC_CubeIDE.elf
+ 
+arm-none-eabi-size  STM32H7_ADC_CubeIDE.elf 
+arm-none-eabi-objdump -h -S STM32H7_ADC_CubeIDE.elf  > "STM32H7_ADC_CubeIDE.list"
+   text	   data	    bss	    dec	    hex	filename
+  57964	    260	  20732	  78956	  1346c	STM32H7_ADC_CubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32H7_ADC_CubeIDE.list
+ 
