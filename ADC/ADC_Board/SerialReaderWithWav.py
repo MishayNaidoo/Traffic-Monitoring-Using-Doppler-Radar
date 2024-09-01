@@ -6,7 +6,7 @@ import struct
 ser = serial.Serial('COM7', baudrate=12000000)  # Adjust 'COMx' and baudrate
 
 # WAV file configuration
-output_wav_path = 'E:/UCT/Masters/Traffic-Monitoring-Using-Doppler-Radar/ADC/ADC_Board/output8.wav'
+output_wav_path = 'E:/UCT/Masters/Traffic-Monitoring-Using-Doppler-Radar/ADC/ADC_Board/output9.wav'
 sample_rate = 48000  # Adjust to the correct sample rate for your data
 num_channels = 1  # Mono audio
 sample_width = 2  # 2 bytes (16-bit audio)

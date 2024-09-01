@@ -15,9 +15,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   5 .data         00000104  24000000  0800e26c  00010000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .bss          000044fc  24000104  0800e370  00010104  2**2
+  6 .bss          00002d2c  24000104  0800e370  00010104  2**2
                   ALLOC
-  7 ._user_heap_stack 00000c00  24004600  0800e370  00010600  2**0
+  7 ._user_heap_stack 00000c00  24002e30  0800e370  00010e30  2**0
                   ALLOC
   8 .ARM.attributes 0000002e  00000000  00000000  00010104  2**0
                   CONTENTS, READONLY
@@ -85,7 +85,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
  80002de:	6078      	str	r0, [r7, #4]
 	//HAL_GPIO_TogglePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin);
 	CDC_Transmit_FS((uint8_t*)&dmaBuffer[DMABUFLEN/2], DMABUFLEN);
- 80002e0:	f241 31e8 	movw	r1, #5096	@ 0x13e8
+ 80002e0:	f44f 6100 	mov.w	r1, #2048	@ 0x800
  80002e4:	4803      	ldr	r0, [pc, #12]	@ (80002f4 <HAL_ADC_ConvCpltCallback+0x1c>)
  80002e6:	f00d fad5 	bl	800d894 <CDC_Transmit_FS>
 //	HAL_ADC_Stop_DMA(&hadc1);
@@ -96,7 +96,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
  80002ee:	46bd      	mov	sp, r7
  80002f0:	bd80      	pop	{r7, pc}
  80002f2:	bf00      	nop
- 80002f4:	24001630 	.word	0x24001630
+ 80002f4:	24000a48 	.word	0x24000a48
 
 080002f8 <HAL_ADC_ConvHalfCpltCallback>:
 
@@ -107,7 +107,7 @@ void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef *hadc){
  80002fe:	6078      	str	r0, [r7, #4]
 	//HAL_GPIO_TogglePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin);
 	CDC_Transmit_FS((uint8_t*)&dmaBuffer[0], DMABUFLEN);
- 8000300:	f241 31e8 	movw	r1, #5096	@ 0x13e8
+ 8000300:	f44f 6100 	mov.w	r1, #2048	@ 0x800
  8000304:	4803      	ldr	r0, [pc, #12]	@ (8000314 <HAL_ADC_ConvHalfCpltCallback+0x1c>)
  8000306:	f00d fac5 	bl	800d894 <CDC_Transmit_FS>
 }
@@ -158,7 +158,7 @@ int main(void)
  8000334:	f00d f9ee 	bl	800d714 <MX_USB_DEVICE_Init>
   /* USER CODE BEGIN 2 */
   HAL_ADC_Start_DMA(&hadc1, (uint32_t*)dmaBuffer, DMABUFLEN);
- 8000338:	f241 32e8 	movw	r2, #5096	@ 0x13e8
+ 8000338:	f44f 6200 	mov.w	r2, #2048	@ 0x800
  800033c:	4904      	ldr	r1, [pc, #16]	@ (8000350 <main+0x38>)
  800033e:	4805      	ldr	r0, [pc, #20]	@ (8000354 <main+0x3c>)
  8000340:	f001 f846 	bl	80013d0 <HAL_ADC_Start_DMA>
@@ -1358,7 +1358,7 @@ void OTG_FS_IRQHandler(void)
  80009ca:	bf00      	nop
  80009cc:	bd80      	pop	{r7, pc}
  80009ce:	bf00      	nop
- 80009d0:	24003efc 	.word	0x24003efc
+ 80009d0:	2400272c 	.word	0x2400272c
 
 080009d4 <SystemInit>:
   *         configuration.
@@ -1660,7 +1660,7 @@ LoopFillZerobss:
   ldr r2, =_sbss
  8000b2c:	24000104 	.word	0x24000104
   ldr r4, =_ebss
- 8000b30:	24004600 	.word	0x24004600
+ 8000b30:	24002e30 	.word	0x24002e30
 
 08000b34 <ADC3_IRQHandler>:
  * @retval None
@@ -1865,7 +1865,7 @@ __weak void HAL_IncTick(void)
  8000c38:	4770      	bx	lr
  8000c3a:	bf00      	nop
  8000c3c:	2400000c 	.word	0x2400000c
- 8000c40:	24002a18 	.word	0x24002a18
+ 8000c40:	24001248 	.word	0x24001248
 
 08000c44 <HAL_GetTick>:
   * @note This function is declared as __weak to be overwritten in case of other
@@ -1885,7 +1885,7 @@ __weak uint32_t HAL_GetTick(void)
  8000c50:	f85d 7b04 	ldr.w	r7, [sp], #4
  8000c54:	4770      	bx	lr
  8000c56:	bf00      	nop
- 8000c58:	24002a18 	.word	0x24002a18
+ 8000c58:	24001248 	.word	0x24001248
 
 08000c5c <HAL_Delay>:
   *       implementations in user file.
@@ -33676,7 +33676,7 @@ static USBD_StatusTypeDef USBD_SetConfig(USBD_HandleTypeDef *pdev, USBD_SetupReq
  800d332:	46bd      	mov	sp, r7
  800d334:	bd80      	pop	{r7, pc}
  800d336:	bf00      	nop
- 800d338:	24002a1c 	.word	0x24002a1c
+ 800d338:	2400124c 	.word	0x2400124c
 
 0800d33c <USBD_GetConfig>:
   * @param  pdev: device instance
@@ -34508,7 +34508,7 @@ void MX_USB_DEVICE_Init(void)
  800d764:	bf00      	nop
  800d766:	bd80      	pop	{r7, pc}
  800d768:	240000b0 	.word	0x240000b0
- 800d76c:	24002a20 	.word	0x24002a20
+ 800d76c:	24001250 	.word	0x24001250
  800d770:	2400001c 	.word	0x2400001c
  800d774:	2400009c 	.word	0x2400009c
 
@@ -34538,9 +34538,9 @@ static int8_t CDC_Init_FS(void)
 }
  800d790:	4618      	mov	r0, r3
  800d792:	bd80      	pop	{r7, pc}
- 800d794:	240034fc 	.word	0x240034fc
- 800d798:	24002a20 	.word	0x24002a20
- 800d79c:	24002cfc 	.word	0x24002cfc
+ 800d794:	24001d2c 	.word	0x24001d2c
+ 800d798:	24001250 	.word	0x24001250
+ 800d79c:	2400152c 	.word	0x2400152c
 
 0800d7a0 <CDC_DeInit_FS>:
 /**
@@ -34667,7 +34667,7 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
  800d88a:	46bd      	mov	sp, r7
  800d88c:	bd80      	pop	{r7, pc}
  800d88e:	bf00      	nop
- 800d890:	24002a20 	.word	0x24002a20
+ 800d890:	24001250 	.word	0x24001250
 
 0800d894 <CDC_Transmit_FS>:
   * @param  Buf: Buffer of data to be sent
@@ -34719,7 +34719,7 @@ uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len)
  800d8d6:	46bd      	mov	sp, r7
  800d8d8:	bd80      	pop	{r7, pc}
  800d8da:	bf00      	nop
- 800d8dc:	24002a20 	.word	0x24002a20
+ 800d8dc:	24001250 	.word	0x24001250
 
 0800d8e0 <CDC_TransmitCplt_FS>:
   * @param  Buf: Buffer of data to be received
@@ -34850,7 +34850,7 @@ uint8_t * USBD_FS_ProductStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length
  800d97a:	46bd      	mov	sp, r7
  800d97c:	bd80      	pop	{r7, pc}
  800d97e:	bf00      	nop
- 800d980:	24003cfc 	.word	0x24003cfc
+ 800d980:	2400252c 	.word	0x2400252c
  800d984:	0800e204 	.word	0x0800e204
 
 0800d988 <USBD_FS_ManufacturerStrDescriptor>:
@@ -34879,7 +34879,7 @@ uint8_t * USBD_FS_ManufacturerStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *l
  800d9a2:	3708      	adds	r7, #8
  800d9a4:	46bd      	mov	sp, r7
  800d9a6:	bd80      	pop	{r7, pc}
- 800d9a8:	24003cfc 	.word	0x24003cfc
+ 800d9a8:	2400252c 	.word	0x2400252c
  800d9ac:	0800e21c 	.word	0x0800e21c
 
 0800d9b0 <USBD_FS_SerialStrDescriptor>:
@@ -34958,7 +34958,7 @@ uint8_t * USBD_FS_ConfigStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length)
  800da02:	46bd      	mov	sp, r7
  800da04:	bd80      	pop	{r7, pc}
  800da06:	bf00      	nop
- 800da08:	24003cfc 	.word	0x24003cfc
+ 800da08:	2400252c 	.word	0x2400252c
  800da0c:	0800e230 	.word	0x0800e230
 
 0800da10 <USBD_FS_InterfaceStrDescriptor>:
@@ -35002,7 +35002,7 @@ uint8_t * USBD_FS_InterfaceStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *leng
  800da3e:	46bd      	mov	sp, r7
  800da40:	bd80      	pop	{r7, pc}
  800da42:	bf00      	nop
- 800da44:	24003cfc 	.word	0x24003cfc
+ 800da44:	2400252c 	.word	0x2400252c
  800da48:	0800e23c 	.word	0x0800e23c
 
 0800da4c <Get_SerialNum>:
@@ -35746,7 +35746,7 @@ USBD_StatusTypeDef USBD_LL_Init(USBD_HandleTypeDef *pdev)
  800de82:	3708      	adds	r7, #8
  800de84:	46bd      	mov	sp, r7
  800de86:	bd80      	pop	{r7, pc}
- 800de88:	24003efc 	.word	0x24003efc
+ 800de88:	2400272c 	.word	0x2400272c
  800de8c:	40080000 	.word	0x40080000
 
 0800de90 <USBD_LL_Start>:
@@ -36222,7 +36222,7 @@ void *USBD_static_malloc(uint32_t size)
  800e11c:	f85d 7b04 	ldr.w	r7, [sp], #4
  800e120:	4770      	bx	lr
  800e122:	bf00      	nop
- 800e124:	240043e0 	.word	0x240043e0
+ 800e124:	24002c10 	.word	0x24002c10
 
 0800e128 <USBD_static_free>:
   * @brief  Dummy memory free

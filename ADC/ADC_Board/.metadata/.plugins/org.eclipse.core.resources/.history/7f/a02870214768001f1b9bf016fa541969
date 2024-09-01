@@ -32,7 +32,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define DMABUFLEN	2048
+#define DMABUFLEN	5096
 #define ADC_RAW_TO_VOLTAGE 0.00005035477f
 /* USER CODE END PD */
 
