@@ -1,0 +1,11 @@
+Error! While Mounting SD Card, Error Code: (3)
+SD Card Mounted Successfully! 
+
+Total SD Card Size: 1481734552 Bytes
+Free SD Card Space: 0 Bytes
+
+Error! While Creating/Opening A New Text File, Error Code: (3)
+Text File Created & Opened! Writing Data To The Text File..
+
+
+SD Card Un-mounted Successfully! 

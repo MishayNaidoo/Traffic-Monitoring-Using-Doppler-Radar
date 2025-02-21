@@ -1,0 +1,2 @@
+Received I2C data: 0x40
+Received I2C data: 0x40

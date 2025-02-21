@@ -1,0 +1,5 @@
+SD Card Mounted Successfully! 
+
+Total SD Card Size: 61049856 Bytes
+Free SD Card Space: 61049088 Bytes
+
